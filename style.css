@@ -3,3 +3,9 @@ body {
 
   font: 15px Arial, sans-serif;
 }
+
+arm {
+  border-radius: 3em;
+  font-size: 10px;
+  font-weight: bold;
+}
