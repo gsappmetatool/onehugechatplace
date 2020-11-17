@@ -31,7 +31,9 @@ arm {
 }
 
 .cucumber {
+  color: red;
   background-color: green;
-    border-radius: 5px;
-    color: red;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 50px;
 }
