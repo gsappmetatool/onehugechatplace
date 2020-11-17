@@ -30,6 +30,16 @@ arm {
   text-align: justify;
 }
 
+.links a {
+  display: block;
+  width: 200px;
+  padding: 20px;
+  margin: 10px;
+  border: 1px dotted #1D1D1D;
+  color: #3333FF;
+
+
+
 .cucumber {
   color: red;
   background-color: green;
