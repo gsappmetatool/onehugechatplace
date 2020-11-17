@@ -2,8 +2,25 @@ body {
   background-color: lightblue;
 }
 
-arm {
-  border-radius: 3em;
-  font-size: 10px;
-  font-weight: bold;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.bubble2 {
+  border-radius: 2em;
+  background: linear-gradient(coral,orange);
+  font-size: 12px;
 }
