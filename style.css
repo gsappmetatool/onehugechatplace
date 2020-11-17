@@ -1,3 +1,9 @@
 body {
   background-color: lightblue;
 }
+
+arm {
+  border-radius: 3em;
+  font-size: 10px;
+  font-weight: bold;
+}
