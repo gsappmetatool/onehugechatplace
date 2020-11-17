@@ -15,6 +15,7 @@ arm {
   font-size: 10px;
   font-weight: bold;
 }
+<<<<<<< Updated upstream
 
 .bubble {
   color: blue;
@@ -30,6 +31,12 @@ arm {
   text-align: justify;
 }
 
+@keyframes example {
+  0%   {background-color:red; left:0px; top:0px;}
+  25%  {background-color:green; left:0px; top:200px;}
+  50%  {background-color:blue; left:200px; top:200px;}
+  75%  {background-color:yellow; left:200px; top:0px;}
+  100% {background-color:red; left:0px; top:0px;}
 .links a {
   display: block;
   width: 200px;
@@ -38,8 +45,6 @@ arm {
   border: 1px dotted #1D1D1D;
   color: #3333FF;
 
-
-
 .cucumber {
   color: red;
   background-color: green;
@@ -47,3 +52,9 @@ arm {
   margin: 10px;
   border-radius: 50px;
 }
+=======
+ .cucumber {
+   background-color: green;
+   border-radius: 5px;
+ }
+>>>>>>> Stashed changes
