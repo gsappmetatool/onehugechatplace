@@ -19,3 +19,11 @@ arm {
 .bubble {
   color: blue;
 }
+
+.bubble2 {
+  background: linear-gradient(orange,coral);
+  padding: 20px;
+  margin: 10px;
+  border-radius: 5px;
+  text-align: justify;
+}
