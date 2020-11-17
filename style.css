@@ -2,7 +2,8 @@ body {
   background-color: lightblue;
 }
 
-h1 {
-  color: red;
-
+arm {
+  border-radius: 3em;
+  font-size: 10px;
+  font-weight: bold;
 }
