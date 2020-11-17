@@ -15,6 +15,7 @@ arm {
   font-size: 10px;
   font-weight: bold;
 }
+<<<<<<< Updated upstream
 
 .bubble {
   color: blue;
@@ -45,3 +46,9 @@ arm {
   margin: 10px;
   border-radius: 50px;
 }
+=======
+ .cucumber {
+   background-color: green;
+   border-radius: 5px;
+ }
+>>>>>>> Stashed changes
