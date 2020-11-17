@@ -29,3 +29,8 @@ arm {
   border-radius: 5px;
   text-align: justify;
 }
+
+.cucumber {
+  background-color: green;
+    border-radius: 5px;
+}
