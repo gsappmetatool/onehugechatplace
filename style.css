@@ -18,4 +18,6 @@ arm {
 
 .bubble {
   color: blue;
+  padding: 20px;
+  margin: 10px;
 }
