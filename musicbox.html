@@ -2,9 +2,29 @@
 <html lang="en">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
+
+
+
   <h1>The button Element</h1>
 
-  <button type="button" onclick="alert('Hello world!')">Click Me!</button>
-  
+
+
+</head>
+
+<body>
+
+<script>
+
+var mySound;
+
+function beep() {
+    mySound = new sound("bounce.mp3");
+    mySound.play();
+}
+
+</script>
+
+  <button type="button" onclick="beep()">Click Me!</button>
+
 </body>
 </html>
