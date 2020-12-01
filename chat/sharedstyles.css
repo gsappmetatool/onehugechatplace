@@ -1,0 +1,19 @@
+
+
+.bubble {
+  color: blue;
+  padding: 20px;
+  margin: 10px;
+}
+
+.bubble2 {
+  background: linear-gradient(orange, coral);
+  padding: 20px;
+  margin: 10px;
+  border-radius: 5px;
+  text-align: justify;
+}
+
+.dan {
+  font-weight: 1.2em;
+}
