@@ -25,7 +25,7 @@ $(document).ready(function() {
     }
 
     $("#textInput").val("")
-    shareddatabase.ref("ohcp-chats").push(data)
+    shareddatabase.ref("ohcp-chats2").push(data)
     
   }
  
@@ -34,7 +34,7 @@ $(document).ready(function() {
   
 
   // when the database changes, change the website  
-  shareddatabase.ref("ohcp-chats").orderByChild('timestamp').limitToLast(chatlimit).on("value", function(snapshot) {
+  shareddatabase.ref("ohcp-chats2").orderByChild('timestamp').limitToLast(chatlimit).on("value", function(snapshot) {
 
       
     var chats = snapshot.val();
