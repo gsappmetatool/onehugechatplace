@@ -27,3 +27,10 @@
   text-align: justify;
 }
 
+.happy {
+  color: green;
+  font-stretch: ultra-expanded;
+  text-decoration: underline;
+  text-shadow: 3px;
+  margin-left: inherit;
+}
