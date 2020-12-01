@@ -28,3 +28,11 @@
   animation-duration: 6s;
   animation-iteration-count: infinite;
 }
+
+.happy {
+  color: green;
+  font-stretch: ultra-expanded;
+  text-decoration: underline;
+  text-shadow: 3px;
+  margin-left: inherit;
+}
