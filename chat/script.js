@@ -25,7 +25,7 @@ $(document).ready(function() {
     }
 
     $("#textInput").val("")
-    shareddatabase.ref("ohcp-chats").push(data)
+    shareddatabase.ref("ohcp-chats2").push(data)
     
   }
  
@@ -34,7 +34,7 @@ $(document).ready(function() {
   
 
   // when the database changes, change the website  
-  shareddatabase.ref("ohcp-chats").orderByChild('timestamp').limitToLast(chatlimit).on("value", function(snapshot) {
+  shareddatabase.ref("ohcp-chats2").orderByChild('timestamp').limitToLast(chatlimit).on("value", function(snapshot) {
 
       
     var chats = snapshot.val();
@@ -45,9 +45,23 @@ $(document).ready(function() {
     for (k in chats) {
 
 
+      var usernameToClasses = chats[k].name
+      .split(/[\s,]+/)
+      .map(function(x) {
+        return x.replace(/\W/g, "");
+      })
+      .join(" ");
+
+        var messageToClasses = chats[k].text
+        .split(/[\s,]+/).map(function(x) {
+      return x.replace(/\W/g, "");
+    }).join(" ");
+
+
+
       $("#chattext").append(`
         <div class="messagecontainer">
-          <span class="name">${chats[k].name}</span> <span class="text"> ${chats[k].text} </span>
+          <span class="name ${usernameToClasses}">${chats[k].name}</span> <span class="text ${messageToClasses}"> ${chats[k].text} </span>
         </div>`)
 
      if( (/\.(gif|jpe?g|tiff?|png|webp|bmp)$/i).test(chats[k].text) == true) {
