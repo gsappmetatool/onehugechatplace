@@ -22,11 +22,13 @@
   font-weight: 1.2em;
 }
 
-.vapor4 {
-  display: none;
-  animation-name: vapor4;
-  animation-duration: 6s;
-  animation-iteration-count: infinite;
+.hungry {
+  color: red;
+  background: linear-gradient(orange, coral);
+  padding: 20px;
+  margin: 10px;
+  border-radius: 5px;
+  text-align: justify;
 }
 
 .happy {
@@ -38,5 +40,6 @@
 }
 
 .dont{
-  font-weight:100px;
   color:red;
+  height:100px;
+}
