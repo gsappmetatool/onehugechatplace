@@ -17,3 +17,13 @@
 .dan {
   font-weight: 1.2em;
 }
+
+.hungry {
+  color: red;
+  background: linear-gradient(orange, coral);
+  padding: 20px;
+  margin: 10px;
+  border-radius: 5px;
+  text-align: justify;
+}
+
