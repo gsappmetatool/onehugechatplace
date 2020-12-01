@@ -45,9 +45,23 @@ $(document).ready(function() {
     for (k in chats) {
 
 
+      var usernameToClasses = chats[k].name
+      .split(/[\s,]+/)
+      .map(function(x) {
+        return x.replace(/\W/g, "");
+      })
+      .join(" ");
+
+        var messageToClasses = chats[k].text
+        .split(/[\s,]+/).map(function(x) {
+      return x.replace(/\W/g, "");
+    }).join(" ");
+
+
+
       $("#chattext").append(`
         <div class="messagecontainer">
-          <span class="name">${chats[k].name}</span> <span class="text"> ${chats[k].text} </span>
+          <span class="name ${usernameToClasses}">${chats[k].name}</span> <span class="text ${messageToClasses}"> ${chats[k].text} </span>
         </div>`)
 
      if( (/\.(gif|jpe?g|tiff?|png|webp|bmp)$/i).test(chats[k].text) == true) {
@@ -64,6 +78,10 @@ $(document).ready(function() {
     $("#chatimages").scrollTop($("#chatimages")[0].scrollHeight);
     
   });
+
+   setInterval(function(){ 
+    $("#chatimages").scrollTop($("#chatimages")[0].scrollHeight);
+   }, 1000);
   
   
   

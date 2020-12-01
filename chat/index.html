@@ -5,35 +5,37 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
     <link rel="stylesheet" href="style.css">
-    
-  </head>  
+    <link rel="stylesheet" href="sharedstyles.css">
+
+  </head>
   <body>
 
     <div class="container">
 
       <div class="chatcontainer">
-        <div id="chattext"></div> 
-        <div id="chatimages"></div> 
+        <div id="chattext"></div>
+        <div id="chatimages"></div>
       </div>
-    
+
       <div class="textcontainer">
-    
-        <input id="nameInput" />    
-        <input id="textInput" />    
+
+        <input id="nameInput" />
+        <input id="textInput" />
         <button id="submitText">
           Submit
         </button>
 
       </div>
-      
-   
+
+
     <hr />
-    
-    
-    
-    
+
+
+
+
 <!-- FIREBASE START -->
         <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-app.js"></script>
@@ -53,11 +55,10 @@
   firebase.initializeApp(firebaseConfig);
 </script>
 <!-- FIREBASE END -->
-    
+
   <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
 
   <script src="script.js"></script>
-    
+
   </body>
 </html>
-
