@@ -78,6 +78,10 @@ $(document).ready(function() {
     $("#chatimages").scrollTop($("#chatimages")[0].scrollHeight);
     
   });
+
+   setInterval(function(){ 
+    $("#chatimages").scrollTop($("#chatimages")[0].scrollHeight);
+   }, 1000);
   
   
   
