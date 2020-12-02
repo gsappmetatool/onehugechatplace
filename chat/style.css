@@ -3,84 +3,11 @@ body {
   font: 15px Arial, sans-serif;
 }
 
-arm {
-  border-radius: 3em;
-  font-size: 10px;
-  font-weight: bold;
-}
 
-.bubble {
-  color: blue;
-  padding: 20px;
-  margin: 10px;
-}
-
-.bubble2 {
-  background: linear-gradient(orange, coral);
-  padding: 20px;
-  margin: 10px;
-  border-radius: 5px;
-  text-align: justify;
-}
-
-@keyframes example {
-  0% {
-    background-color: red;
-    left: 0px;
-    top: 0px;
-  }
-  25% {
-    background-color: green;
-    left: 0px;
-    top: 200px;
-  }
-  50% {
-    background-color: blue;
-    left: 200px;
-    top: 200px;
-  }
-  75% {
-    background-color: yellow;
-    left: 200px;
-    top: 0px;
-  }
-  100% {
-    background-color: red;
-    left: 0px;
-    top: 0px;
-  }
-}
-
-.links a {
-  display: block;
-  width: 200px;
-  padding: 20px;
-  margin: 10px;
+a {
   border: 1px dotted #1d1d1d;
-  color: #3333ff;
-  /* CSS files add styling rules to your content */
-
-  body {
-    font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
-    margin: 2em;
-  }
-
-  h1 {
-    font-style: italic;
-    color: #373fff;
-  }
-
-  .bubble {
-    display: inline;
-    padding: 10px;
-    background-color: lightblue;
-    border-radius: 10px;
-  }
-
-  input {
-    display: block;
-    padding: 5px;
-  }
+  color: #3388ff;
+  padding: 2px;
 }
 
 .container {
@@ -119,18 +46,29 @@ arm {
 
 .messagecontainer {
   margin-bottom: 2px;
+  display: flex;
+  flex-direction: row;
 }
 
-.name {
+.messagename {
   font-weight: bold;
-  display: inline-block;
-  width: 100px;
+  flex: 0 0 100px;
   text-align: right;
   border-right: 1px solid black;
   margin-right: 10px;
   padding-right: 10px;
 }
 
-.text {
-  display: inline-block;
+.messageclasses {
+  flex: 0 0 100px;
+  font-size: 0.8em;
+  text-align: right;
+  border-right: 1px solid black;
+  margin-right: 10px;
+  padding-right: 10px;
+  color: #AAA;
+}
+
+.messagetext p {
+  margin: 0px;
 }
