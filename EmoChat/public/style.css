@@ -71,6 +71,7 @@ ul {
   outline: none;
   padding-bottom: 15px;
   text-align: center;
+  top: 60%;
   width: 400px;
 }
 
@@ -135,6 +136,7 @@ background: radial-gradient(circle, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 10
 }
 
 #messages {
+  font-size: 30px;
   height: 100%;
   margin: 0;
   overflow-y: scroll;
@@ -152,10 +154,11 @@ background: radial-gradient(circle, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 10
 
 .username {
   font-weight: 700;
+  font-size: 30px;
   overflow: hidden;
   padding-right: 15px;
   text-align: right;
-  color: #777;
+  color: white;
 }
 
 /* Input */
@@ -183,4 +186,21 @@ background: radial-gradient(circle, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 10
   z-index: 100;
   bottom: 100px;
   right: 20px;
+}
+
+
+#myDIV {
+  width: 100%;
+  height: 100%;
+  background: white;
+  animation: mymove 5s infinite;
+  z-index: 0;
+  position: absolute;
+  top :0px;
+  display: none;
+}
+
+/*@keyframes mymove {
+  from {background-color: red;}
+  to {background-color: blue;}
 }

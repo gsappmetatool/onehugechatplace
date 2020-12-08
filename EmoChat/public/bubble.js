@@ -70,12 +70,15 @@ class Bubble {
   }
   
   clicked() {
+    $("#myDIV").fadeIn(3000).fadeOut(3000);
     var d = dist(mouseX, mouseY, this.x, this.y);
     if(d < this.size){
        backc = color(this.r, this.g, this.b)
       var rgb = { r: this.r, g: this.g, b: this.b };
+      document.getElementById("myDIV").style.backgroundColor="rgb(" + this.r + "," + this.g + "," + this.b + ")";
+      //$("body").css("background-color", "rgb(" + this.r + "," + this.g + "," + this.b + ")")
       
-        shareddatabase.ref("rm-test-emotion").set(rgb);
+        shareddatabase.ref("rm-bubble-emotion").set(rgb);
     }
   }
 }

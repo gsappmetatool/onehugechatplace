@@ -2,7 +2,8 @@
 
 // Get a reference to the database service
 var shareddatabase = firebase.database();
-
+var emo = {r:120, g:120, b:120}
+shareddatabase.ref("rm-test-emotion").set(emo);
 window.emotion = {};
 
 $(function() {
@@ -150,14 +151,7 @@ $(function() {
 
 
     
-    // IF the message includes "make it blue"..
-    if (message.includes("makeitblue")) {  
-
-      // get an element that has the id 'messages'
-      // and then, edit the CSS to make the background color blue
-      $("#messages").css('background-color', 'rgb(0,00,100)')
-
-    }
+    
     
     
     // CHANGING FIREBASE DATA 
@@ -176,13 +170,30 @@ $(function() {
     }
     
     if (message.includes("sad")) {  
+      
+      var thisemotion = {r: window.emotion.r - 30, g: window.emotion.g - 30, b: window.emotion.b - 30};
 
-        var emotion = { name: "sad", intensity: 0.3 };
+      //var thisemotion = { name: "happy", intensity: 0.8, r: 220, g:220, b:220 };
+      
+      console.log(thisemotion)
+      
+        shareddatabase.ref("rm-test-emotion").set(thisemotion);
 
-        shareddatabase.ref("rm-test-emotion").set(emotion);
+       // var emotion = { name: "sad", intensity: 0.3 };
+
+       // shareddatabase.ref("rm-test-emotion").set(emotion);//
 
     }
 
+    /*
+    // IF the message includes "make it blue"..
+    if (message.includes("makeitblue")) {  
+
+      // get an element that has the id 'messages'
+      // and then, edit the CSS to make the background color blue
+      $("#messages").css('background-color', 'rgb(0,00,100)')
+
+    }
     
 
     // IF the message includes "make it blue"..
@@ -220,7 +231,7 @@ $(function() {
     
     if (message.includes("STOP")) {  
       $("#messages").css('background-color', 'rgb(255,0,0)')
-    }
+    }  */
 
 
   }
@@ -480,7 +491,7 @@ $(function() {
   socket.on("login", data => {
     connected = true;
     // Display the welcome message
-    var message = "Welcome to Metatool Class Chat! You are connected. – ";
+    var message = "Welcome to Emo Chat";
     log(message, {
       prepend: true
     });
@@ -553,7 +564,8 @@ $(function() {
     
     $("#emotion_log").empty();
     $("#emotion_log").append("<div>" + emotion.r + "</div>")
-  $("body").css("background-color", "rgb(" + emotion.r + "," + emotion.g + "," + emotion.b + ")")
+    
+  $("body").css("background-color", "rgb(" + emotion.r + "," + emotion.g + "," + emotion.b + ")") 
                     //$("body").css("font-size", cp[0] * 2  + "em")//
   });
   
