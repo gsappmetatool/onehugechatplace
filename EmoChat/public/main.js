@@ -2,9 +2,13 @@
 
 // Get a reference to the database service
 var shareddatabase = firebase.database();
-var emo = {r:120, g:120, b:120}
-shareddatabase.ref("rm-test-emotion").set(emo);
+var emo = {gradient: 40}
+//emo.gradient2 = 50;
+
+shareddatabase.ref("rm-gradient-emotion").set(emo);
 window.emotion = {};
+
+var allfeelings = [];
 
 $(function() {
   
@@ -152,32 +156,90 @@ $(function() {
 
     
     
+    var emotions = {
+      "happy": 5, 
+      "sad": -5,
+      "neutral": 0,
+      "god": 5,
+    }
+
+
+
+    var total_change = 0;
+
+
+    for(var k in emotions) {
+      if(message.includes(k)) {
+        total_change += emotions[k];
+      }
+    }
+
+    console.log("total change=" , total_change)
+
+
     
     
     // CHANGING FIREBASE DATA 
       
-    if (message.includes("happy")) {  
+    if (message.includes("happy")) { 
+      
+     // var thisemotion = {happy: window.emotion.happy + 1 };
       
       
-      var thisemotion = {r: window.emotion.r + 30, g: window.emotion.g + 30, b: window.emotion.b + 30};
+      var thisemotion = {gradient: window.emotion.gradient - 5};
+     
 
       //var thisemotion = { name: "happy", intensity: 0.8, r: 220, g:220, b:220 };
       
       console.log(thisemotion)
       
-        shareddatabase.ref("rm-test-emotion").set(thisemotion);
+        shareddatabase.ref("rm-gradient-emotion").set(thisemotion);
 
+    }
+    if (message.includes("great")) {
+      var thisemotion = {gradient: window.emotion.gradient - 5};
+      shareddatabase.ref("rm-gradient-emotion").set(thisemotion);
+    }
+    if (message.includes("nice")) {
+      var thisemotion = {gradient: window.emotion.gradient - 5};
+      shareddatabase.ref("rm-gradient-emotion").set(thisemotion);
+    }
+    if (message.includes("brillant")) {
+      var thisemotion = {gradient: window.emotion.gradient - 5};
+      shareddatabase.ref("rm-gradient-emotion").set(thisemotion);
+    }
+    if (message.includes("cool")) {
+      var thisemotion = {gradient: window.emotion.gradient - 5};
+      shareddatabase.ref("rm-gradient-emotion").set(thisemotion);
+    }
+    
+    if (message.includes("bad")) {
+      var thisemotion = {gradient: window.emotion.gradient + 5};
+      shareddatabase.ref("rm-gradient-emotion").set(thisemotion);
+    }
+     if (message.includes("depress")) {
+      var thisemotion = {gradient: window.emotion.gradient + 5};
+      shareddatabase.ref("rm-gradient-emotion").set(thisemotion);
+    }
+     if (message.includes("god")) {
+      var thisemotion = {gradient: window.emotion.gradient + 5};
+      shareddatabase.ref("rm-gradient-emotion").set(thisemotion);
+    }
+    if (message.includes("un")) {
+      var thisemotion = {gradient: window.emotion.gradient + 5};
+      shareddatabase.ref("rm-gradient-emotion").set(thisemotion);
     }
     
     if (message.includes("sad")) {  
       
-      var thisemotion = {r: window.emotion.r - 30, g: window.emotion.g - 30, b: window.emotion.b - 30};
+      var thisemotion = {gradient: window.emotion.gradient + 5};
+     
 
       //var thisemotion = { name: "happy", intensity: 0.8, r: 220, g:220, b:220 };
       
       console.log(thisemotion)
       
-        shareddatabase.ref("rm-test-emotion").set(thisemotion);
+        shareddatabase.ref("rm-gradient-emotion").set(thisemotion);
 
        // var emotion = { name: "sad", intensity: 0.3 };
 
@@ -555,7 +617,7 @@ $(function() {
   
   
     // when the database changes, change the website  
-  shareddatabase.ref("rm-test-emotion").on("value", function(snapshot) {
+  shareddatabase.ref("rm-gradient-emotion").on("value", function(snapshot) {
     
     emotion = snapshot.val();
    
@@ -563,7 +625,8 @@ $(function() {
     console.log(emotion);
     
     $("#emotion_log").empty();
-    $("#emotion_log").append("<div>" + emotion.r + "</div>")
+    $("#emotion_log").append("<div>" + emotion.gradient + emotion.happy + "</div>")
+    $("body").css("background", "linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,22,121,1) "+ emotion.gradient +"%, rgba(0,212,255,1) 100%)")
     
   $("body").css("background-color", "rgb(" + emotion.r + "," + emotion.g + "," + emotion.b + ")") 
                     //$("body").css("font-size", cp[0] * 2  + "em")//
