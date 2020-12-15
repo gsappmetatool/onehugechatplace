@@ -28,6 +28,9 @@ $(document).ready(function() {
 
   music_files["productive"] = new Audio('https://cdn.glitch.com/099e9d61-1dd5-4b34-a2e1-8c246b5d3408%2FClicking%2001.mp3?v=1607986972430');
 
+  music_files["calm"] = new Audio('https://cdn.glitch.com/099e9d61-1dd5-4b34-a2e1-8c246b5d3408%2FFire%2001.wav?v=1608070239542');
+
+
 
   $("#playsound").click(function() {
     console.log("PLAY SOUND");
@@ -41,7 +44,7 @@ $(document).ready(function() {
 
 
 
-
+  
 
 
 
@@ -64,7 +67,7 @@ $(document).ready(function() {
     // when the database changes, change the website
   shareddatabase.ref(database_refname)
   .orderByChild("timestamp")
-  .limitToLast(1)
+  .limitToLast(30)
   .on("value", function(snapshot) {
     var data = snapshot.val();
 
@@ -88,7 +91,7 @@ $(document).ready(function() {
   // when the database changes, change the website
   shareddatabase.ref(database_refname)
   .orderByChild("timestamp")
-  .limitToLast(5)
+  .limitToLast(2)
 
   .on("value", function(snapshot) {
     var data = snapshot.val();
@@ -97,7 +100,6 @@ $(document).ready(function() {
 
 
     for(var d in data) {
-      // hi taylor! can you hear me?
 
 
       var messagetext = data[d]["text"];
