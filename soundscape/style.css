@@ -1,0 +1,25 @@
+/* CSS files add styling rules to your content */
+
+body {
+  font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+  margin: 2em;
+  background-color: black;
+}
+
+h1 {
+  font-style: italic;
+  color: #373fff;
+}
+
+
+.bubble {
+  display: inline;
+  padding: 10px;
+  background-color: lightblue;
+  border-radius: 10px;
+}
+
+input {
+  display: block;
+  padding: 5px;
+}
