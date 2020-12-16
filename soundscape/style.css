@@ -4,7 +4,7 @@ body {
   font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
   margin: 2em;
   background-color: black;
-  color: white;
+  color: hotpink;
   position: absolute;
   bottom: 20px;
   background-image: url("https://24.media.tumblr.com/916fb4d5eb745cc933e4e1ae4f794e32/tumblr_mvb71g3MUl1six59bo1_500.gif");
@@ -27,11 +27,11 @@ h1 {
 input {
   display: block;
   padding: 5px;
-  color: white;
-  background-color: black;
+  color: lightblue;
+  background-color: #171717;
 }
 
 .button {
-  color: white;
-  background-color: black;
+  color: lightblue;
+  background-color: #171717;
 }
