@@ -12,7 +12,7 @@ $(document).ready(function() {
 
 
 
-
+  
 
 
 
@@ -44,35 +44,35 @@ function checkMicLevel() {
     volfactor = 0.1;
   }
 
-  if (micvolume > 5 && micvolume < 20) {
+  if (micvolume > 5 && micvolume < 10) {
     volfactor = 0.2;
   }
 
-  if (micvolume > 20 && micvolume < 40) {
+  if (micvolume > 10 && micvolume < 20) {
     volfactor = 0.3;
   }
 
-  if (micvolume > 40 && micvolume < 50) {
+  if (micvolume > 20 && micvolume < 30) {
     volfactor = 0.4;
   }
 
-  if (micvolume > 50 && micvolume < 60) {
+  if (micvolume > 30 && micvolume < 40) {
     volfactor = 0.5;
   }
 
-  if (micvolume > 60 && micvolume < 70) {
+  if (micvolume > 40 && micvolume < 50) {
    volfactor = 0.6;
   }
 
-  if (micvolume > 70 && micvolume < 80) {
+  if (micvolume > 50 && micvolume < 60) {
     volfactor = 0.7;
   }
 
-  if (micvolume > 80 && micvolume < 90) {
+  if (micvolume > 60 && micvolume < 80) {
     volfactor = 0.8;
   }
 
-  if (micvolume > 90 && micvolume < 100) {
+  if (micvolume > 80 && micvolume < 100) {
     volfactor = 0.9;
   }
 
@@ -184,6 +184,19 @@ navigator.mediaDevices
 
 
 
+  music_files["break"] = new Audio('https://cdn.glitch.com/099e9d61-1dd5-4b34-a2e1-8c246b5d3408%2FTalking%2001.wav?v=1608232197831');
+
+  music_files["break"].loop = true;
+
+
+  music_files["vacation"] = new Audio('https://cdn.glitch.com/099e9d61-1dd5-4b34-a2e1-8c246b5d3408%2FWaves%2001.wav?v=1608231780213');
+
+  music_files["vacation"].loop = true;
+
+
+  music_files["coffee"] = new Audio('https://cdn.glitch.com/099e9d61-1dd5-4b34-a2e1-8c246b5d3408%2FCoffee%2001.wav?v=1608233729844');
+
+  music_files["coffee"].loop = true;
 
 
 
@@ -203,6 +216,12 @@ shareddatabase.ref("volume").on("value", function(snapshot) {
   music_files["productive"].volume = volfactor;
 
   music_files["calm"].volume = volfactor;
+
+  music_files["break"].volume = volfactor;
+
+  music_files["vacation"].volume = volfactor;
+
+  music_files["coffee"].volume = volfactor;
 
   });
 
