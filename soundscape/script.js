@@ -306,7 +306,7 @@ shareddatabase.ref("volume").on("value", function(snapshot) {
   // when the database changes, change the website
   shareddatabase.ref(database_refname)
   .orderByChild("timestamp")
-  .limitToLast(3)
+  .limitToLast(5)
 
   .on("value", function(snapshot) {
     var data = snapshot.val();
