@@ -199,6 +199,11 @@ navigator.mediaDevices
   music_files["coffee"].loop = true;
 
 
+  music_files["!"] = new Audio('https://cdn.glitch.com/099e9d61-1dd5-4b34-a2e1-8c246b5d3408%2FCheer%2001.wav?v=1608234845580');
+
+  music_files["!"].loop = true;
+
+
 
 shareddatabase.ref("volume").on("value", function(snapshot) {
     volfactor = snapshot.val().value;
@@ -222,6 +227,8 @@ shareddatabase.ref("volume").on("value", function(snapshot) {
   music_files["vacation"].volume = volfactor;
 
   music_files["coffee"].volume = volfactor;
+
+  music_files["!"].volume = volfactor;
 
   });
 
