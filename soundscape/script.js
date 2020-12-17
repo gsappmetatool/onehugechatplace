@@ -12,7 +12,7 @@ $(document).ready(function() {
 
 
 
-  
+
 
 
 
@@ -194,7 +194,7 @@ navigator.mediaDevices
   music_files["vacation"].loop = true;
 
 
-  music_files["coffee"] = new Audio('https://cdn.glitch.com/099e9d61-1dd5-4b34-a2e1-8c246b5d3408%2FCoffee%2001.wav?v=1608233729844');
+  music_files["coffee"] = new Audio('https://cdn.glitch.com/099e9d61-1dd5-4b34-a2e1-8c246b5d3408%2FCoffee%2002.wav?v=1608234427840');
 
   music_files["coffee"].loop = true;
 
@@ -299,7 +299,7 @@ shareddatabase.ref("volume").on("value", function(snapshot) {
   // when the database changes, change the website
   shareddatabase.ref(database_refname)
   .orderByChild("timestamp")
-  .limitToLast(2)
+  .limitToLast(3)
 
   .on("value", function(snapshot) {
     var data = snapshot.val();
