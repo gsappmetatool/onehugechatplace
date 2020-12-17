@@ -42,42 +42,52 @@ function checkMicLevel() {
 
   if (micvolume < 5) {
     volfactor = 0.1;
+    document.body.style.opacity = "0.4";
   }
 
   if (micvolume > 5 && micvolume < 10) {
     volfactor = 0.2;
+    document.body.style.opacity = "0.47"
   }
 
   if (micvolume > 10 && micvolume < 20) {
     volfactor = 0.3;
+    document.body.style.opacity = "0.53"
   }
 
   if (micvolume > 20 && micvolume < 30) {
     volfactor = 0.4;
+    document.body.style.opacity = "0.6"
   }
 
   if (micvolume > 30 && micvolume < 40) {
     volfactor = 0.5;
+    document.body.style.opacity = "0.67"
   }
 
   if (micvolume > 40 && micvolume < 50) {
    volfactor = 0.6;
+    document.body.style.opacity = "0.73"
   }
 
   if (micvolume > 50 && micvolume < 60) {
     volfactor = 0.7;
+    document.body.style.opacity = "0.8"
   }
 
   if (micvolume > 60 && micvolume < 80) {
     volfactor = 0.8;
+    document.body.style.opacity = "0.87"
   }
 
   if (micvolume > 80 && micvolume < 100) {
     volfactor = 0.9;
+    document.body.style.opacity = "0.93"
   }
 
   if (micvolume > 100) {
     volfactor = 1;
+    document.body.style.opacity = "1"
   }
 
 
@@ -147,61 +157,63 @@ navigator.mediaDevices
 
   var music_files = {};
 
+  window.music_files = music_files;
+
 
   music_files["alert"] = new Audio('https://cdn.glitch.com/099e9d61-1dd5-4b34-a2e1-8c246b5d3408%2FAlert%2001.wav?v=1607985563046');
 
-  music_files["alert"].loop = true;
+  //music_files["alert"].loop = true;
 
 
 
   music_files["tired"] = new Audio('https://cdn.glitch.com/099e9d61-1dd5-4b34-a2e1-8c246b5d3408%2FYawn%2001.wav?v=1607985884255');
 
-  music_files["tired"].loop = true;
+  //music_files["tired"].loop = true;
 
 
 
   music_files["bored"] = new Audio('https://cdn.glitch.com/099e9d61-1dd5-4b34-a2e1-8c246b5d3408%2FHum%2001.wav?v=1607985989303');
 
-  music_files["bored"].loop = true;
+  //music_files["bored"].loop = true;
 
 
 
   music_files["hungry"] = new Audio('https://cdn.glitch.com/099e9d61-1dd5-4b34-a2e1-8c246b5d3408%2FHungry%2001.wav?v=1607986411308');
 
-  music_files["hungry"].loop = true;
+  //music_files["hungry"].loop = true;
 
 
 
   music_files["productive"] = new Audio('https://cdn.glitch.com/099e9d61-1dd5-4b34-a2e1-8c246b5d3408%2FClicking%2001.mp3?v=1607986972430');
 
-  music_files["productive"].loop = true;
+  //music_files["productive"].loop = true;
 
 
 
   music_files["calm"] = new Audio('https://cdn.glitch.com/099e9d61-1dd5-4b34-a2e1-8c246b5d3408%2FFire%2001.wav?v=1608070239542');
 
-  music_files["calm"].loop = true;
+  //music_files["calm"].loop = true;
 
 
 
   music_files["break"] = new Audio('https://cdn.glitch.com/099e9d61-1dd5-4b34-a2e1-8c246b5d3408%2FTalking%2001.wav?v=1608232197831');
 
-  music_files["break"].loop = true;
+  //music_files["break"].loop = true;
 
 
   music_files["vacation"] = new Audio('https://cdn.glitch.com/099e9d61-1dd5-4b34-a2e1-8c246b5d3408%2FWaves%2001.wav?v=1608231780213');
 
-  music_files["vacation"].loop = true;
+  //music_files["vacation"].loop = true;
 
 
   music_files["coffee"] = new Audio('https://cdn.glitch.com/099e9d61-1dd5-4b34-a2e1-8c246b5d3408%2FCoffee%2002.wav?v=1608234427840');
 
-  music_files["coffee"].loop = true;
+  //music_files["coffee"].loop = true;
 
 
   music_files["!"] = new Audio('https://cdn.glitch.com/099e9d61-1dd5-4b34-a2e1-8c246b5d3408%2FCheer%2001.wav?v=1608234845580');
 
-  music_files["!"].loop = true;
+  //music_files["!"].loop = true;
 
 
 
@@ -231,8 +243,6 @@ shareddatabase.ref("volume").on("value", function(snapshot) {
   music_files["!"].volume = volfactor;
 
   });
-
-
 
 
 
@@ -298,6 +308,13 @@ shareddatabase.ref("volume").on("value", function(snapshot) {
 
     }
 
+    var musicfilenames = Object.keys(music_files);
+
+    for (var i in musicfilenames) {
+
+             music_files[musicfilenames[i]].loop = false
+
+    }
 
   });
 
@@ -307,7 +324,6 @@ shareddatabase.ref("volume").on("value", function(snapshot) {
   shareddatabase.ref(database_refname)
   .orderByChild("timestamp")
   .limitToLast(5)
-
   .on("value", function(snapshot) {
     var data = snapshot.val();
 
@@ -331,6 +347,8 @@ shareddatabase.ref("volume").on("value", function(snapshot) {
 
          music_files[musicfilenames[i]].play()
 
+         music_files[musicfilenames[i]].loop = true
+
 
 
 
@@ -350,9 +368,7 @@ shareddatabase.ref("volume").on("value", function(snapshot) {
     }
 
 
-
   })
-
 
 
 });
