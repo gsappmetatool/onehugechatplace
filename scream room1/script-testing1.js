@@ -32,11 +32,20 @@ $(document).ready(function() {
   }
 
 
-  var chatlimit = 10;
+  var chatlimit = 15;
 
 
   // when the database changes, change the website
   shareddatabase.ref("screamroom-dev2").orderByChild('timestamp').limitToLast(chatlimit).on("value", function(snapshot) {
+
+//     const setBg = () => {
+//   const randomColor = Math.floor(Math.random()*16777215).toString(16);
+//     document.body.style.backgroundColor = "#" + randomColor;
+//   color.innerHTML = "#" + randomColor;
+// }
+//
+// genNew.addEventListener("click", setBg);
+// setBg();
 
 
     var chats = snapshot.val();
@@ -67,7 +76,7 @@ $(document).ready(function() {
       console.log(k);
         // yd test random arragement of text
         $("#chattext").append(`
-          <div class="messagecontainer messagecontainer-${chatlength - i}" style="opacity:${Math.pow(i/chatlength, 4)}; top: ${chats[k].x*100}vh; left:  ${chats[k].y*100}vw;">
+          <div class="messagecontainer messagecontainer-${chatlength - i}" style="opacity:${Math.pow(i/chatlength, 4)}; top: ${chats[k].x*80}vh; left:  ${chats[k].y*80}vw;">
             <span class="name">${chats[k].name}</span>
             <span class="text"> ${chats[k].text}</span>
           </div>`)
