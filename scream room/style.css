@@ -103,6 +103,7 @@ arm {
   height: 80vh;
   display: flex;
   flex-direction: row;
+  background-color: rgba(0,0,255,0);
 }
 
 /* #chattext, #chatimages { */
@@ -241,10 +242,11 @@ arm {
 } */
 
 .textcontainer {
-  position: fixed;
+  position: absolute;
   width: 100vw;
   bottom: 0px;
   height: 10vh;
+  background-color: rgba(0,0,255,1);
 }
 
 #textInput {
@@ -259,8 +261,13 @@ arm {
 
 .messagecontainer-1 {
   -webkit-animation-direction: normal;
+<<<<<<< HEAD
 -webkit-animation-duration: 2s;
 -webkit-animation-iteration-count: 1;
+=======
+-webkit-animation-duration: 10s;
+/* -webkit-animation-iteration-count: infinite; */
+>>>>>>> 3cc532677660681b26327a55d2681301abbacd9f
 -webkit-animation-name: colours;
 -webkit-animation-timing-function: ease;
 }
