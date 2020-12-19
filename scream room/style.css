@@ -262,12 +262,8 @@ arm {
 .messagecontainer-1 {
   -webkit-animation-direction: normal;
 <<<<<<< HEAD
--webkit-animation-duration: 2s;
+-webkit-animation-duration: 6s;
 -webkit-animation-iteration-count: 1;
-=======
--webkit-animation-duration: 10s;
-/* -webkit-animation-iteration-count: infinite; */
->>>>>>> 3cc532677660681b26327a55d2681301abbacd9f
 -webkit-animation-name: colours;
 -webkit-animation-timing-function: ease;
 }
@@ -275,7 +271,7 @@ arm {
 
 .messagecontainer-2 {
   -webkit-animation-direction: normal;
--webkit-animation-duration: 2s;
+-webkit-animation-duration: 5.5s;
 -webkit-animation-iteration-count: 1;
 -webkit-animation-name: colours2;
 -webkit-animation-timing-function: ease;
@@ -283,7 +279,7 @@ arm {
 
 .messagecontainer-3 {
   -webkit-animation-direction: normal;
--webkit-animation-duration: 2s;
+-webkit-animation-duration: 5s;
 -webkit-animation-iteration-count: 1;
 -webkit-animation-name: colours3;
 -webkit-animation-timing-function: ease;
@@ -291,7 +287,7 @@ arm {
 
 .messagecontainer-4 {
   -webkit-animation-direction: normal;
--webkit-animation-duration: 2s;
+-webkit-animation-duration: 4.5s;
 -webkit-animation-iteration-count: 1;
 -webkit-animation-name: colours4;
 -webkit-animation-timing-function: ease;
@@ -299,7 +295,7 @@ arm {
 
 .messagecontainer-5 {
   -webkit-animation-direction: normal;
--webkit-animation-duration: 2s;
+-webkit-animation-duration: 4s;
 -webkit-animation-iteration-count: 1;
 -webkit-animation-name: colours5;
 -webkit-animation-timing-function: ease;
@@ -307,7 +303,7 @@ arm {
 
 .messagecontainer-6 {
   -webkit-animation-direction: normal;
--webkit-animation-duration: 2s;
+-webkit-animation-duration: 3.5s;
 -webkit-animation-iteration-count: 1;
 -webkit-animation-name: colours6;
 -webkit-animation-timing-function: ease;
@@ -315,7 +311,7 @@ arm {
 
 .messagecontainer-7 {
   -webkit-animation-direction: normal;
--webkit-animation-duration: 2s;
+-webkit-animation-duration: 3s;
 -webkit-animation-iteration-count: 1;
 -webkit-animation-name: colours7;
 -webkit-animation-timing-function: ease;
@@ -323,7 +319,7 @@ arm {
 
 .messagecontainer-8 {
   -webkit-animation-direction: normal;
--webkit-animation-duration: 2s;
+-webkit-animation-duration: 2.5s;
 -webkit-animation-iteration-count: 1;
 -webkit-animation-name: colours8;
 -webkit-animation-timing-function: ease;
@@ -339,7 +335,7 @@ arm {
 
 .messagecontainer-10 {
   -webkit-animation-direction: normal;
--webkit-animation-duration: 2s;
+-webkit-animation-duration: 1.5s;
 -webkit-animation-iteration-count: 1;
 -webkit-animation-name: colours10;
 -webkit-animation-timing-function: ease;
