@@ -3,17 +3,6 @@ body {
   font: 15px Arial, sans-serif;
 }
 
-arm {
-  border-radius: 3em;
-  font-size: 10px;
-  font-weight: bold;
-}
-
-.bubble {
-  color: blue;
-  padding: 20px;
-  margin: 10px;
-}
 
 .bubble2 {
   background: linear-gradient(orange, coral);
@@ -62,36 +51,15 @@ arm {
   width: 200px;
   padding: 20px;
   margin: 10px;
+>>>>>>> 2b3596081ffab08fb01dbe044baff4dfe1d22f9f
   border: 1px dotted #1d1d1d;
-  color: #3333ff;
-  /* CSS files add styling rules to your content */
-
-  body {
-    font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
-    margin: 2em;
-  }
-
-  h1 {
-    font-style: italic;
-    color: #373fff;
-  }
-
-  .bubble {
-    display: inline;
-    padding: 10px;
-    background-color: lightblue;
-    border-radius: 10px;
-  }
-
-  input {
-    display: block;
-    padding: 5px;
-  }
+  color: #3388ff;
+  padding: 2px;
 }
 
 .container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 80vw;
   margin: auto;
 }
@@ -104,7 +72,6 @@ arm {
 
 #chattext, #chatimages {
   overflow: auto;
-  width: 50%;
 }
 
 #chatimages img {
@@ -112,7 +79,7 @@ arm {
 }
 
 
-.textcontainer {
+.inputcontainer {
   position: fixed;
   width: 100vw;
   bottom: 0px;
@@ -125,20 +92,70 @@ arm {
 
 .messagecontainer {
   margin-bottom: 2px;
+  display: flex;
+  flex-direction: row;
 }
 
-.name {
+.messagename {
   font-weight: bold;
-  display: inline-block;
-  width: 100px;
+  flex: 0 0 100px;
   text-align: right;
   border-right: 1px solid black;
   margin-right: 10px;
   padding-right: 10px;
 }
 
-.text {
-  display: inline-block;
+.messageclasses {
+  flex: 0 0 calc(50% - 100px);
+  font-size: 0.8em;
+  text-align: right;
+  border-right: 1px solid black;
+  margin-right: 10px;
+  padding-right: 10px;
+  color: #AAA;
+}
+
+.messagetext {
+  flex: 0 0 calc(50% - 100px);
+}
+
+.messagetext p {
+  margin: 0px;
+}
+
+.messageimg {
+  flex: 0 0 calc(50% - 100px);
+  text-align: right;
+}
+ 
+.messageimg img {
+  max-width: 100%;
+  max-height: 300px;
+}
+
+
+
+
+#dynamicstyles {
+  font-family: Courier, monospace;
+}
+
+.stylecontainer {
+  display: flex;
+  margin: 10px;
+}
+
+.styleselector {
+  flex-basis: 100px;
+  text-align: right;
+  margin-right: 10px;
+}
+
+.stylerules::before{
+  content: " { ";
+}
+.stylerules::after {
+  content: " }";
 }
 
 .vapor4 {

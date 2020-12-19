@@ -5,25 +5,49 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+<<<<<<< HEAD
+   
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="sharedstyles.css">
+    <style id="dynamicsheet"></style>
+    
+  </head>  
+=======
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="sharedstyles.css">
 
   </head>
+>>>>>>> 2b3596081ffab08fb01dbe044baff4dfe1d22f9f
   <body>
 
     <div class="container">
 
       <div class="chatcontainer">
-        <div id="chattext"></div>
-        <div id="chatimages"></div>
+        <div id="chattext"></div> 
       </div>
 
-      <div class="textcontainer">
-
-        <input id="nameInput" />
-        <input id="textInput" />
+      <div class="stylescontainer">
+        Styles
+        <div id="dynamicstyles"></div> 
+        Style selector: <input id="styleselector" />
+        Style rules: <input id="stylerules">
+        <button id="submitStyle">
+          Submit
+        </button>
+      </div>
+    
+      <div class="inputcontainer">
+    
+    
+        Classes:
+        <input id="classesInput" />    
+        Username:
+        <input id="nameInput" />    
+        Message:
+        <input id="textInput" />    
         <button id="submitText">
           Submit
         </button>
@@ -57,8 +81,15 @@
 <!-- FIREBASE END -->
 
   <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+<<<<<<< HEAD
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="chat.js"></script>
+  <script src="styles.js"></script>
+    
+=======
 
   <script src="script.js"></script>
 
+>>>>>>> 2b3596081ffab08fb01dbe044baff4dfe1d22f9f
   </body>
 </html>
