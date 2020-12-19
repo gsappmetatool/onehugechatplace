@@ -32,7 +32,7 @@ $(document).ready(function() {
   }
 
 
-  var chatlimit = 15;
+  var chatlimit = 11;
 
 
   // when the database changes, change the website
@@ -76,7 +76,7 @@ $(document).ready(function() {
       console.log(k);
         // yd test random arragement of text
         $("#chattext").append(`
-          <div class="messagecontainer messagecontainer-${chatlength - i}" style="opacity:${Math.pow(i/chatlength, 4)}; top: ${chats[k].x*80}vh; left:  ${chats[k].y*80}vw;">
+          <div class="messagecontainer messagecontainer-${chatlength - i}" style="opacity:${0}; color:rgb(242,62,201);  font-style: italic;font:Sarpanch, sans-serif;font-size:150px; top: ${chats[k].x*70}vh; left:  ${chats[k].y*70}vw;">
 
             <span class="text"> ${chats[k].text}</span>
           </div>`)

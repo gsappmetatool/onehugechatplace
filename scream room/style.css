@@ -1,7 +1,8 @@
 body {
   /* background-color: rgb(255,255,255); */
-  background-image: url(https://images.app.goo.gl/1njToWy1gvNjZd199);
-  font: 15px Arial, sans-serif;
+  background-image: linear-gradient( rgba(0,0,255,0),rgba(0,0,255,0),rgba(0,0,255,0),rgba(0,0,255,0.3), rgba(0,0,255,1));
+  font: 25px arial, sans-serif;
+  /* font-style: italic; */
 }
 
 arm {
@@ -117,17 +118,107 @@ arm {
 }
 
 @-webkit-keyframes colours {
-	  0% {color: #39f;}
-	 15% {color: #8bc5d1;}
-	 30% {color: #f8cb4a;}
-	 45% {color: #95b850;}
-	 60% {color: #944893;}
-	 75% {color: #c71f00;}
-	 90% {color: #bdb280;}
-	100% {color: #39f;}
+	  0% {opacity: 100%;}
+     10% {opacity: 90%;}
+	 20% {opacity: 80%;}
+	 30% {opacity: 70%;}
+	 40% {opacity: 60%;}
+	 50% {opacity: 50%;}
+	 60% {opacity: 40%;}
+	 70% {opacity: 30%;}
+	80% {opacity: 20%;}
+  	90% {opacity: 10%;}
+    	100% {opacity: 0%;}
 }
 
 @-webkit-keyframes colours2 {
+	  0% {opacity: 90%;}
+
+	 20% {opacity: 80%;}
+	 30% {opacity: 70%;}
+	 40% {opacity: 60%;}
+	 50% {opacity: 50%;}
+	 60% {opacity: 40%;}
+	 70% {opacity: 30%;}
+	80% {opacity: 20%;}
+  	90% {opacity: 10%;}
+    	100% {opacity: 0%;}
+}
+
+@-webkit-keyframes colours3 {
+	  0% {opacity: 80%;}
+
+
+	 30% {opacity: 70%;}
+	 40% {opacity: 60%;}
+	 50% {opacity: 50%;}
+	 60% {opacity: 40%;}
+	 70% {opacity: 30%;}
+	80% {opacity: 20%;}
+  	90% {opacity: 10%;}
+    	100% {opacity: 0%;}
+}
+
+@-webkit-keyframes colours4 {
+	  0% {opacity: 70%;}
+	 40% {opacity: 60%;}
+	 50% {opacity: 50%;}
+	 60% {opacity: 40%;}
+	 70% {opacity: 30%;}
+	80% {opacity: 20%;}
+  	90% {opacity: 10%;}
+    	100% {opacity: 0%;}
+}
+
+@-webkit-keyframes colours5 {
+	  0% {opacity: 60%;}
+	 50% {opacity: 50%;}
+	 60% {opacity: 40%;}
+	 70% {opacity: 30%;}
+	80% {opacity: 20%;}
+  	90% {opacity: 10%;}
+    	100% {opacity: 0%;}
+}
+
+@-webkit-keyframes colours6 {
+	  0% {opacity: 50%;}
+
+	 60% {opacity: 40%;}
+	 70% {opacity: 30%;}
+	80% {opacity: 20%;}
+  	90% {opacity: 10%;}
+    	100% {opacity: 0%;}
+}
+
+@-webkit-keyframes colours7 {
+	  0% {opacity: 40%;}
+	 70% {opacity: 30%;}
+	80% {opacity: 20%;}
+  	90% {opacity: 10%;}
+    	100% {opacity: 0%;}
+}
+
+@-webkit-keyframes colours8 {
+	  0% {opacity: 30%;}
+	80% {opacity: 20%;}
+  	90% {opacity: 10%;}
+    	100% {opacity: 0%;}
+}
+
+@-webkit-keyframes colours9 {
+	  0% {opacity: 20%;}
+  	90% {opacity: 10%;}
+    	100% {opacity: 0%;}
+}
+
+@-webkit-keyframes colours10 {
+	  0% {opacity: 10%;}
+    	100% {opacity: 0%;}
+}
+
+
+
+/* @-webkit-keyframes colours2 {
 	  0% {color: #F87B60;}
 	 15% {color: #F8C560;}
 	 30% {color: #E1F860;}
@@ -147,7 +238,7 @@ arm {
 	 75% {color: #A58043;}
 	 90% {color: #A54943;}
 	100% {color: #A54393;}
-}
+} */
 
 .textcontainer {
   position: fixed;
@@ -168,8 +259,8 @@ arm {
 
 .messagecontainer-1 {
   -webkit-animation-direction: normal;
--webkit-animation-duration: 10s;
--webkit-animation-iteration-count: infinite;
+-webkit-animation-duration: 2s;
+-webkit-animation-iteration-count: 1;
 -webkit-animation-name: colours;
 -webkit-animation-timing-function: ease;
 }
@@ -177,73 +268,73 @@ arm {
 
 .messagecontainer-2 {
   -webkit-animation-direction: normal;
--webkit-animation-duration: 10s;
--webkit-animation-iteration-count: infinite;
+-webkit-animation-duration: 2s;
+-webkit-animation-iteration-count: 1;
 -webkit-animation-name: colours2;
 -webkit-animation-timing-function: ease;
 }
 
 .messagecontainer-3 {
   -webkit-animation-direction: normal;
--webkit-animation-duration: 10s;
--webkit-animation-iteration-count: infinite;
+-webkit-animation-duration: 2s;
+-webkit-animation-iteration-count: 1;
 -webkit-animation-name: colours3;
 -webkit-animation-timing-function: ease;
 }
 
 .messagecontainer-4 {
   -webkit-animation-direction: normal;
--webkit-animation-duration: 10s;
--webkit-animation-iteration-count: infinite;
--webkit-animation-name: colours;
+-webkit-animation-duration: 2s;
+-webkit-animation-iteration-count: 1;
+-webkit-animation-name: colours4;
 -webkit-animation-timing-function: ease;
 }
 
 .messagecontainer-5 {
   -webkit-animation-direction: normal;
--webkit-animation-duration: 10s;
--webkit-animation-iteration-count: infinite;
--webkit-animation-name: colours2;
+-webkit-animation-duration: 2s;
+-webkit-animation-iteration-count: 1;
+-webkit-animation-name: colours5;
 -webkit-animation-timing-function: ease;
 }
 
 .messagecontainer-6 {
   -webkit-animation-direction: normal;
--webkit-animation-duration: 10s;
--webkit-animation-iteration-count: infinite;
--webkit-animation-name: colours3;
+-webkit-animation-duration: 2s;
+-webkit-animation-iteration-count: 1;
+-webkit-animation-name: colours6;
 -webkit-animation-timing-function: ease;
 }
 
 .messagecontainer-7 {
   -webkit-animation-direction: normal;
--webkit-animation-duration: 10s;
--webkit-animation-iteration-count: infinite;
--webkit-animation-name: colours;
+-webkit-animation-duration: 2s;
+-webkit-animation-iteration-count: 1;
+-webkit-animation-name: colours7;
 -webkit-animation-timing-function: ease;
 }
 
 .messagecontainer-8 {
   -webkit-animation-direction: normal;
--webkit-animation-duration: 10s;
--webkit-animation-iteration-count: infinite;
--webkit-animation-name: colours2;
+-webkit-animation-duration: 2s;
+-webkit-animation-iteration-count: 1;
+-webkit-animation-name: colours8;
 -webkit-animation-timing-function: ease;
 }
 
 .messagecontainer-9 {
   -webkit-animation-direction: normal;
--webkit-animation-duration: 10s;
--webkit-animation-iteration-count: infinite;
--webkit-animation-name: colours3;
+-webkit-animation-duration: 2s;
+-webkit-animation-iteration-count: 1;
+-webkit-animation-name: colours9;
 -webkit-animation-timing-function: ease;
 }
 
 .messagecontainer-10 {
   -webkit-animation-direction: normal;
--webkit-animation-duration: 10s;
--webkit-animation-iteration-count: infinite;
--webkit-animation-name: colours;
+-webkit-animation-duration: 2s;
+-webkit-animation-iteration-count: 1;
+-webkit-animation-name: colours10;
 -webkit-animation-timing-function: ease;
 }
 
