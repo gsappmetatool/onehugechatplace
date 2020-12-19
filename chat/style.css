@@ -4,7 +4,54 @@ body {
 }
 
 
-a {
+.bubble2 {
+  background: linear-gradient(orange, coral);
+  padding: 20px;
+  margin: 10px;
+  border-radius: 5px;
+  text-align: justify;
+}
+
+@keyframes example {
+  0% {
+    background-color: red;
+    left: 0px;
+    top: 0px;
+  }
+  25% {
+    background-color: green;
+    left: 0px;
+    top: 200px;
+  }
+  50% {
+    background-color: blue;
+    left: 200px;
+    top: 200px;
+  }
+  75% {
+    background-color: yellow;
+    left: 200px;
+    top: 0px;
+  }
+  100% {
+    background-color: red;
+    left: 0px;
+    top: 0px;
+  }
+}
+
+@keyframes vapor4 {
+  0% {color: rgba(150,255,255,.5);}
+  50% {color: rgba(73,0,255,.6);}
+  100% {color: rgba(150,255,255,.5);}
+}
+
+.links a {
+  display: block;
+  width: 200px;
+  padding: 20px;
+  margin: 10px;
+>>>>>>> 2b3596081ffab08fb01dbe044baff4dfe1d22f9f
   border: 1px dotted #1d1d1d;
   color: #3388ff;
   padding: 2px;
@@ -109,4 +156,11 @@ a {
 }
 .stylerules::after {
   content: " }";
+}
+
+.vapor4 {
+  display: none;
+  animation-name: vapor4;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
 }
