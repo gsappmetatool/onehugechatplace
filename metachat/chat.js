@@ -2,7 +2,7 @@
 var shareddatabase = firebase.database();
 
 var chatlimit = 1000;
-var database_refname = "ohcp-metachat-dev"
+var database_refname = "ohcp-metachat-dev";
 
 $(document).ready(function() {
 
@@ -18,7 +18,6 @@ $(document).ready(function() {
   function submitText() {
     var data = {
       timestamp: Date.now(),
-      classes: $("#classesInput").val(),
       name: $("#nameInput").val(),
       text: $("#textInput").val()
     };
@@ -38,7 +37,6 @@ $(document).ready(function() {
       var chats = snapshot.val();
 
       $("#chattext").empty();
-      $("#chatimages").empty();
 
       var url;
 
@@ -58,24 +56,15 @@ $(document).ready(function() {
           .join(" ");
 
        
-        var chatimghtml = ""
-        var imgregex =/(https?:\/\/.*\.(?:png|jpg|jpeg))/;
-        if( imgregex.test(chats[k].text) == true) {
-          var imgurl = chats[k].text.match(imgregex)[0];
-          chatimghtml = `<img class="chatimage" src="${imgurl}">`;
-        }
-        
 
         $("#chattext").append(`
         <div class="messagecontainer ${chats[k].classes}">
           <div class="messagename ${usernameToClasses}">${chats[k].name}</div>
           <div class="messagetext ${messageToClasses}"> ${marked(chats[k].text)} </div>
-          <div class="messageimg">${chatimghtml}</div>
         </div>`);
 
       }
 
       $("#chattext").scrollTop($("#chattext")[0].scrollHeight);
-      //$("#chatimages").scrollTop($("#chatimages")[0].scrollHeight);
     });
 });
