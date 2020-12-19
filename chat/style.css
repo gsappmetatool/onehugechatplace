@@ -12,7 +12,7 @@ a {
 
 .container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 80vw;
   margin: auto;
 }
@@ -25,7 +25,6 @@ a {
 
 #chattext, #chatimages {
   overflow: auto;
-  width: 50%;
 }
 
 #chatimages img {
@@ -33,7 +32,7 @@ a {
 }
 
 
-.textcontainer {
+.inputcontainer {
   position: fixed;
   width: 100vw;
   bottom: 0px;
@@ -60,7 +59,7 @@ a {
 }
 
 .messageclasses {
-  flex: 0 0 100px;
+  flex: 0 0 calc(50% - 100px);
   font-size: 0.8em;
   text-align: right;
   border-right: 1px solid black;
@@ -69,6 +68,45 @@ a {
   color: #AAA;
 }
 
+.messagetext {
+  flex: 0 0 calc(50% - 100px);
+}
+
 .messagetext p {
   margin: 0px;
+}
+
+.messageimg {
+  flex: 0 0 calc(50% - 100px);
+  text-align: right;
+}
+ 
+.messageimg img {
+  max-width: 100%;
+  max-height: 300px;
+}
+
+
+
+
+#dynamicstyles {
+  font-family: Courier, monospace;
+}
+
+.stylecontainer {
+  display: flex;
+  margin: 10px;
+}
+
+.styleselector {
+  flex-basis: 100px;
+  text-align: right;
+  margin-right: 10px;
+}
+
+.stylerules::before{
+  content: " { ";
+}
+.stylerules::after {
+  content: " }";
 }
