@@ -69,14 +69,17 @@ $(document).ready(function() {
 
 
       */
-
+//change text style based on the number of each text from 0 to 10 (chatlimit is 11 text at same time)
       var k = Object.keys(chats)[i]
 
 
       console.log(k);
-        // yd test random arragement of text
         $("#chattext").append(`
-          <div class="messagecontainer messagecontainer-${chatlength - i}" style="opacity:${0}; color:rgb(242,62,201);  font-style: italic;font:Sarpanch, sans-serif;font-size:150px; top: ${chats[k].x*70}vh; left:  ${chats[k].y*70}vw;">
+          <div class="messagecontainer messagecontainer-${chatlength - i}" style="opacity:${0};
+           font-style: italic;
+          font:Sarpanch, sans-serif;
+          font-size:120px;
+          top: ${chats[k].x*50}vh; left:  ${chats[k].y*70}vw;">
 
             <span class="text"> ${chats[k].text}</span>
           </div>`)
@@ -85,12 +88,16 @@ $(document).ready(function() {
 
     };
 
+    // // TESTING: keywords founctions: img, automatic reply
+    //
+    // if (chat[k].includes("hey")) {
+    //   $(chats[k]).css('black')
+    // }
+
 
     $("#chattext").scrollTop($("#chattext")[0].scrollHeight);
 
   });
-
-
 
 
 
