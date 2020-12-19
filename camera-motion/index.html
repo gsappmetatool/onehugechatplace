@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Hello!</title>
+    
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+    
+    <!-- import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/handtrackjs/dist/handtrack.min.js"> </script>
+    
+    
+<!-- FIREBASE START -->
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-database.js"></script>
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyB5Ibrm5Wp6cAruVRLSXoxnjOYE3FpDTxw",
+    authDomain: "metatool-firebase.firebaseapp.com",
+    databaseURL: "https://metatool-firebase.firebaseio.com",
+    projectId: "metatool-firebase",
+    storageBucket: "metatool-firebase.appspot.com",
+    messagingSenderId: "576952752264",
+    appId: "1:576952752264:web:c97e4a80cb7b64dbfd673d"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+<!-- FIREBASE END -->
+    
+  </head>  
+  
+  
+  <body>
+    
+    <div class="instructionButton">
+       <button onclick="myFunction()">Instruction</button>
+        <script>
+          function myFunction() {
+            alert("Welcome! Please turn on your webcam, you might need to disable it first in Zoom. Move your hand slowly at the circles, you will hear notes from you and your collaborators.");
+          }
+        </script>
+    </div>
+   
+
+    
+    <video id="video"></video>
+    <audio src="https://cdn.glitch.com/4183f6ae-75bb-4373-84cc-030d2d019f7b%2FpianoC.mp3?v=1607789223709" id="audio"></audio>
+    <div class="note">
+      <div class="note1">
+        <img src="https://cdn.glitch.com/4183f6ae-75bb-4373-84cc-030d2d019f7b%2Fyellow%20circle.png?v=1608398216653" width="175" height="175">
+      </div>
+      <div class="note2">
+        <img src="https://cdn.glitch.com/4183f6ae-75bb-4373-84cc-030d2d019f7b%2Fpink%20circle.png?v=1608398216656" width="175" height="175">
+      </div>
+      <div class="note3">
+        <img src="https://cdn.glitch.com/4183f6ae-75bb-4373-84cc-030d2d019f7b%2Fpurple%20circle.png?v=1608398216655" width="175" height="175">
+      </div>
+      <div class="note4">
+        <img src="https://cdn.glitch.com/4183f6ae-75bb-4373-84cc-030d2d019f7b%2Fblue%20circle.png?v=1608398217168" width="175" height="175">
+      </div>
+    </div>
+    
+    
+  </body>
+</html>
