@@ -38,14 +38,14 @@ $(document).ready(function() {
   // when the database changes, change the website
   shareddatabase.ref("screamroom-dev2").orderByChild('timestamp').limitToLast(chatlimit).on("value", function(snapshot) {
 
-//     const setBg = () => {
-//   const randomColor = Math.floor(Math.random()*16777215).toString(16);
-//     document.body.style.backgroundColor = "#" + randomColor;
-//   color.innerHTML = "#" + randomColor;
-// }
-//
-// genNew.addEventListener("click", setBg);
-// setBg();
+    const setBg = () => {
+  const randomColor = Math.floor(Math.random()*16777215).toString(16);
+    document.body.style.backgroundColor = "#" + randomColor;
+  color.innerHTML = "#" + randomColor;
+}
+
+genNew.addEventListener("click", setBg);
+setBg();
 
 
     var chats = snapshot.val();
