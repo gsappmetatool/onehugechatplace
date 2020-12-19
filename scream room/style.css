@@ -1,5 +1,5 @@
 body {
-  background-color: #dddddd;
+  background-color: rgb(255,255,255);
   font: 15px Arial, sans-serif;
 }
 
@@ -74,6 +74,7 @@ arm {
   h1 {
     font-style: italic;
     color: #373fff;
+
   }
 
   .bubble {
@@ -92,7 +93,7 @@ arm {
 .container {
   display: flex;
   flex-direction: column;
-  width: 80vw;
+  width:500vw;
   margin: auto;
 }
 
@@ -102,15 +103,28 @@ arm {
   flex-direction: row;
 }
 
-#chattext, #chatimages {
-  overflow: auto;
-  width: 50%;
+/* #chattext, #chatimages { */
+  #chattext {
+  /* overflow: auto; */
+  width: 30%;
+  height: 80%;
+  font-size: 50px;
 }
 
 #chatimages img {
   width: 100%;
 }
 
+@-webkit-keyframes colours {
+	  0% {color: #39f;}
+	 15% {color: #8bc5d1;}
+	 30% {color: #f8cb4a;}
+	 45% {color: #95b850;}
+	 60% {color: #944893;}
+	 75% {color: #c71f00;}
+	 90% {color: #bdb280;}
+	100% {color: #39f;}
+}
 
 .textcontainer {
   position: fixed;
@@ -125,12 +139,95 @@ arm {
 
 .messagecontainer {
   margin-bottom: 2px;
+  position: absolute;
+ transition: opacity 10s;
+}
+
+.messagecontainer-1 {
+  -webkit-animation-direction: normal;
+-webkit-animation-duration: 10s;
+-webkit-animation-iteration-count: 1;
+-webkit-animation-name: colours;
+-webkit-animation-timing-function: ease;
+}
+
+
+.messagecontainer-2 {
+  -webkit-animation-direction: normal;
+-webkit-animation-duration: 10s;
+-webkit-animation-iteration-count: 1;
+-webkit-animation-name: colours;
+-webkit-animation-timing-function: ease;
+}
+
+.messagecontainer-3 {
+  -webkit-animation-direction: normal;
+-webkit-animation-duration: 10s;
+-webkit-animation-iteration-count: 1;
+-webkit-animation-name: colours;
+-webkit-animation-timing-function: ease;
+}
+
+.messagecontainer-4 {
+  -webkit-animation-direction: normal;
+-webkit-animation-duration: 10s;
+-webkit-animation-iteration-count: 1;
+-webkit-animation-name: colours;
+-webkit-animation-timing-function: ease;
+}
+
+.messagecontainer-5 {
+  -webkit-animation-direction: normal;
+-webkit-animation-duration: 10s;
+-webkit-animation-iteration-count: 1;
+-webkit-animation-name: colours;
+-webkit-animation-timing-function: ease;
+}
+
+.messagecontainer-6 {
+  -webkit-animation-direction: normal;
+-webkit-animation-duration: 10s;
+-webkit-animation-iteration-count: 1;
+-webkit-animation-name: colours;
+-webkit-animation-timing-function: ease;
+}
+
+.messagecontainer-7 {
+  -webkit-animation-direction: normal;
+-webkit-animation-duration: 10s;
+-webkit-animation-iteration-count: 1;
+-webkit-animation-name: colours;
+-webkit-animation-timing-function: ease;
+}
+
+.messagecontainer-8 {
+  -webkit-animation-direction: normal;
+-webkit-animation-duration: 10s;
+-webkit-animation-iteration-count: 1;
+-webkit-animation-name: colours;
+-webkit-animation-timing-function: ease;
+}
+
+.messagecontainer-9 {
+  -webkit-animation-direction: normal;
+-webkit-animation-duration: 10s;
+-webkit-animation-iteration-count: 1;
+-webkit-animation-name: colours;
+-webkit-animation-timing-function: ease;
+}
+
+.messagecontainer-10 {
+  -webkit-animation-direction: normal;
+-webkit-animation-duration: 10s;
+-webkit-animation-iteration-count: 1;
+-webkit-animation-name: colours;
+-webkit-animation-timing-function: ease;
 }
 
 .name {
   font-weight: bold;
   display: inline-block;
-  width: 100px;
+  width: 10px;
   text-align: right;
   border-right: 1px solid black;
   margin-right: 10px;
@@ -146,4 +243,12 @@ arm {
   animation-name: vapor4;
   animation-duration: 6s;
   animation-iteration-count: infinite;
+}
+
+.span {
+  display: block;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: normal;
+  font-family: monospace;
 }
