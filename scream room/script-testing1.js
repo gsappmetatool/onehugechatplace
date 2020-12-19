@@ -20,7 +20,7 @@ $(document).ready(function() {
 
     var data = {
       timestamp: Date.now(),
-      name: $("#nameInput").val(),
+      // name: $("#nameInput").val(),
       text: $("#textInput").val(),
       x: Math.random(),
       y: Math.random(),
@@ -77,7 +77,7 @@ $(document).ready(function() {
         // yd test random arragement of text
         $("#chattext").append(`
           <div class="messagecontainer messagecontainer-${chatlength - i}" style="opacity:${Math.pow(i/chatlength, 4)}; top: ${chats[k].x*80}vh; left:  ${chats[k].y*80}vw;">
-            <span class="name">${chats[k].name}</span>
+
             <span class="text"> ${chats[k].text}</span>
           </div>`)
 

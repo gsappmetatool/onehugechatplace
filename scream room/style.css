@@ -126,6 +126,28 @@ arm {
 	100% {color: #39f;}
 }
 
+@-webkit-keyframes colours2 {
+	  0% {color: #F87B60;}
+	 15% {color: #F8C560;}
+	 30% {color: #E1F860;}
+	 45% {color: #60F870;}
+	 60% {color: #60F8D5;}
+	 75% {color: #60C1F8;}
+	 90% {color: #6072F8;}
+	100% {color: #E860F8;}
+}
+
+@-webkit-keyframes colours3 {
+	  0% {color: #9B43A5;}
+	 15% {color: #4347A5;}
+	 30% {color: #43A2A5;}
+	 45% {color: #43A556;}
+	 60% {color: #93A543;}
+	 75% {color: #A58043;}
+	 90% {color: #A54943;}
+	100% {color: #A54393;}
+}
+
 .textcontainer {
   position: fixed;
   width: 100vw;
@@ -146,7 +168,7 @@ arm {
 .messagecontainer-1 {
   -webkit-animation-direction: normal;
 -webkit-animation-duration: 10s;
--webkit-animation-iteration-count: 1;
+-webkit-animation-iteration-count: infinite;
 -webkit-animation-name: colours;
 -webkit-animation-timing-function: ease;
 }
@@ -155,23 +177,23 @@ arm {
 .messagecontainer-2 {
   -webkit-animation-direction: normal;
 -webkit-animation-duration: 10s;
--webkit-animation-iteration-count: 1;
--webkit-animation-name: colours;
+-webkit-animation-iteration-count: infinite;
+-webkit-animation-name: colours2;
 -webkit-animation-timing-function: ease;
 }
 
 .messagecontainer-3 {
   -webkit-animation-direction: normal;
 -webkit-animation-duration: 10s;
--webkit-animation-iteration-count: 1;
--webkit-animation-name: colours;
+-webkit-animation-iteration-count: infinite;
+-webkit-animation-name: colours3;
 -webkit-animation-timing-function: ease;
 }
 
 .messagecontainer-4 {
   -webkit-animation-direction: normal;
 -webkit-animation-duration: 10s;
--webkit-animation-iteration-count: 1;
+-webkit-animation-iteration-count: infinite;
 -webkit-animation-name: colours;
 -webkit-animation-timing-function: ease;
 }
@@ -179,23 +201,23 @@ arm {
 .messagecontainer-5 {
   -webkit-animation-direction: normal;
 -webkit-animation-duration: 10s;
--webkit-animation-iteration-count: 1;
--webkit-animation-name: colours;
+-webkit-animation-iteration-count: infinite;
+-webkit-animation-name: colours2;
 -webkit-animation-timing-function: ease;
 }
 
 .messagecontainer-6 {
   -webkit-animation-direction: normal;
 -webkit-animation-duration: 10s;
--webkit-animation-iteration-count: 1;
--webkit-animation-name: colours;
+-webkit-animation-iteration-count: infinite;
+-webkit-animation-name: colours3;
 -webkit-animation-timing-function: ease;
 }
 
 .messagecontainer-7 {
   -webkit-animation-direction: normal;
 -webkit-animation-duration: 10s;
--webkit-animation-iteration-count: 1;
+-webkit-animation-iteration-count: infinite;
 -webkit-animation-name: colours;
 -webkit-animation-timing-function: ease;
 }
@@ -203,23 +225,23 @@ arm {
 .messagecontainer-8 {
   -webkit-animation-direction: normal;
 -webkit-animation-duration: 10s;
--webkit-animation-iteration-count: 1;
--webkit-animation-name: colours;
+-webkit-animation-iteration-count: infinite;
+-webkit-animation-name: colours2;
 -webkit-animation-timing-function: ease;
 }
 
 .messagecontainer-9 {
   -webkit-animation-direction: normal;
 -webkit-animation-duration: 10s;
--webkit-animation-iteration-count: 1;
--webkit-animation-name: colours;
+-webkit-animation-iteration-count: infinite;
+-webkit-animation-name: colours3;
 -webkit-animation-timing-function: ease;
 }
 
 .messagecontainer-10 {
   -webkit-animation-direction: normal;
 -webkit-animation-duration: 10s;
--webkit-animation-iteration-count: 1;
+-webkit-animation-iteration-count: infinite;
 -webkit-animation-name: colours;
 -webkit-animation-timing-function: ease;
 }

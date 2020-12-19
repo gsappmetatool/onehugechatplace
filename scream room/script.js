@@ -12,7 +12,7 @@ $(document).ready(function() {
       }
    });
 
-  
+
   // when we click on it, change teh database
   $("#submitText").click(submitText);
 
@@ -20,23 +20,23 @@ $(document).ready(function() {
 
     var data = {
       timestamp: Date.now(),
-      name: $("#nameInput").val(),
+      // name: $("#nameInput").val(),
       text: $("#textInput").val()
     }
 
     $("#textInput").val("")
     shareddatabase.ref("ohcp-chats2").push(data)
-    
+
   }
- 
+
 
   var chatlimit = 100;
-  
 
-  // when the database changes, change the website  
+
+  // when the database changes, change the website
   shareddatabase.ref("ohcp-chats2").orderByChild('timestamp').limitToLast(chatlimit).on("value", function(snapshot) {
 
-      
+
     var chats = snapshot.val();
 
 
@@ -45,12 +45,12 @@ $(document).ready(function() {
     for (k in chats) {
 
 
-      var usernameToClasses = chats[k].name
-      .split(/[\s,]+/)
-      .map(function(x) {
-        return x.replace(/\W/g, "");
-      })
-      .join(" ");
+      // var usernameToClasses = chats[k].name
+      // .split(/[\s,]+/)
+      // .map(function(x) {
+      //   return x.replace(/\W/g, "");
+      // })
+      // .join(" ");
 
         var messageToClasses = chats[k].text
         .split(/[\s,]+/).map(function(x) {
@@ -61,7 +61,8 @@ $(document).ready(function() {
 
       $("#chattext").append(`
         <div class="messagecontainer">
-          <span class="name ${usernameToClasses}">${chats[k].name}</span> <span class="text ${messageToClasses}"> ${chats[k].text} </span>
+
+          <span class="text ${messageToClasses}"> ${chats[k].text} </span>
         </div>`)
 
      if( (/\.(gif|jpe?g|tiff?|png|webp|bmp)$/i).test(chats[k].text) == true) {
@@ -76,14 +77,13 @@ $(document).ready(function() {
 
     $("#chattext").scrollTop($("#chattext")[0].scrollHeight);
     $("#chatimages").scrollTop($("#chatimages")[0].scrollHeight);
-    
+
   });
 
-   setInterval(function(){ 
+   setInterval(function(){
     $("#chatimages").scrollTop($("#chatimages")[0].scrollHeight);
    }, 1000);
-  
-  
-  
-});
 
+
+
+});
