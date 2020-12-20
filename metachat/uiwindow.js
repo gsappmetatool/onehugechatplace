@@ -37,9 +37,10 @@ function initui() {
 
 
   function tryChatCollapse() {
+      console.log("trychatcollapse");
     if(!chatcollapsed) {
       var timing = 500;
-      let mch = $("#metachatcontainer").height();
+      var mch = $("#metachatcontainer").height();
       chattext_fullheight = $("#chattext").height();
       inputcontainer_fullheight = $("#inputcontainer").height();
       $("#metachatcontainer").animate({ height: (mch - chattext_fullheight - inputcontainer_fullheight) }, timing);
@@ -51,9 +52,10 @@ function initui() {
   }
 
   function tryChatExpand() {
+      console.log("trychatexpadn");
     if(chatcollapsed) {
       var timing = 500;
-      let mch = $("#metachatcontainer").height();
+      var mch = $("#metachatcontainer").height();
       $("#metachatcontainer").animate({ height: (mch + chattext_fullheight + inputcontainer_fullheight) }, timing);
       $("#inputcontainer").slideDown(timing)
       $( "#metachatcontainer" ).resizable( "enable" );
@@ -64,10 +66,10 @@ function initui() {
 
   function minmaxtoggle() {
 
-    if(!chatcollapsed) {
-      tryChatCollapse();
-    } else {
+    if(chatcollapsed) {
       tryChatExpand();
+    } else {
+      tryChatCollapse();
     }
   }
 
