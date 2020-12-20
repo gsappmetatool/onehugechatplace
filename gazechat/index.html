@@ -1,32 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>MetaChat</title>
+    <title>Chat</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
    
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
     <link rel="stylesheet" href="style.css">
+    <style id="dynamicsheet"></style>
 
 
   <body>
     <div class="container">
 
-
       <div id="metachatcontainer">
-        <div id="navbar">
-          <button id="minmax">
-            minmax 
-          </button>
-          <button id="popout">
-            popout
-          </button>
-        </div> 
         <div id="chattext"></div> 
         <div id="inputcontainer">
-          Name:
+          Username:
           <input id="nameInput" />    
           Message:
           <input id="textInput" />    
@@ -36,9 +27,8 @@
         </div>
       </div>
 
-      <div id="iframecontainer">
-        <iframe width="100%" height="100%" frameborder="0"  id="backgroundiframe"></iframe>
-      </div>
+      <div id="iframecontainer"></div>
+      		<canvas width="640" height="480"></canvas>
     </div>
 
 
@@ -63,11 +53,11 @@
 <!-- FIREBASE END -->
 
   <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="camvas.js"></script>
+  <script src="pico.js"></script>
+  <script src="facedetect.js"></script>
   <script src="chat.js"></script>
-  <script src="uiwindow.js"></script>
 
   </body>
 </html>
