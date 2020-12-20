@@ -2,7 +2,7 @@
 var shareddatabase = firebase.database();
 
 var chatlimit = 1000;
-var database_refname = "ohcp-metachat-dev";
+var database_refname = "ohcp-metafacechat-prod";
 
 var currentiframeurl = "";
 
