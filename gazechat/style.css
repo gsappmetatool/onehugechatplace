@@ -103,9 +103,35 @@ body {
   margin-bottom: 2px;
   display: flex;
   flex-direction: row;
-  transition: font-size .75s ease-in-out;
+  transition: font-size .75s ease-in-out, top 2s, left 2s;
   height: 20px;
 }
+
+.spatial .messagecontainer {
+  position: absolute;
+  display: block;
+  text-align: center;
+}
+
+.spatial .messagename {
+  text-align: center;
+  border: none;
+  padding: 0px;
+  margin: 0px;
+}
+.spatial .messagetext {
+  text-align: center;
+  background-color: white;
+  width: 100px !important;
+  height: 100px !important;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
 
 .messagename {
   font-weight: bold;

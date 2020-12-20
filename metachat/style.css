@@ -12,6 +12,7 @@ right: 0px;
 }
 
 #metachatcontainer {
+  border-radius: 5px;
   background-color: white;
   opacity: 0.9;
   position: absolute;
@@ -42,18 +43,25 @@ right: 0px;
 
 #navbar {
   text-align: right;
-  padding: 5px;
+  padding: 5px 10px;
 }
 
 #navbar button {
   font-weight: bold;
+}
+
+.navlabel {
+  float: left;
+  font-weight: bold;
+  padding: 2px;
+  color: gray;
 }
  
 #chattext {
   padding: 10px 0px;
   overflow: auto;
   color: black;
-  background: #BBB;
+  background: #ddF;
   height: calc(100% - 120px);
 }
 
