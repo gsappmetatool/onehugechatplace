@@ -2,8 +2,9 @@
 var shareddatabase = firebase.database();
 
 var chatlimit = 1000;
-var database_refname = "ohcp-metafacechat-dev";
+var database_refname = "ohcp-metafacechat-prod";
 var faces_refname = "ohcp-gazechat-faces2";
+var chatmode_refname = "ohcp-gazechat-chatmode";
 var chatmode;
 
 function initFaceChat() {
@@ -72,14 +73,26 @@ $(document).ready(function() {
   initFaceChat();
 
   $("#facecanvas").click(function() {
+    var thischatmode;
     if(chatmode !== "spatial") {
-      chatmode = "spatial";
-      $("body").addClass("spatial");
+      thischatmode = "spatial";
     } else {
-      chatmode = "normal";
-      $("body").removeClass("spatial");
+      thischatmode = "normal";
     }
+    shareddatabase.ref(chatmode_refname).set({ name: thischatmode })
   });
+
+    shareddatabase.ref(chatmode_refname)
+    .on("value", function(snapshot) {
+      var thischatmode = snapshot.val().name;
+      console.log("oh!", thischatmode)
+      chatmode = thischatmode;
+      if(chatmode == "spatial") {
+        $("body").addClass("spatial");
+      } else {
+        $("body").removeClass("spatial");
+      }
+    });
 
 // when the database changes, change the website
   shareddatabase
