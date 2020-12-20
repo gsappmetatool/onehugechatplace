@@ -4,11 +4,7 @@ var shareddatabase = firebase.database();
 var chatlimit = 1000;
 var database_refname = "ohcp-metachat-dev";
 
-var currentiframeurl = "";
-
 $(document).ready(function() {
-
-
 
   $("#textInput").on("keyup", function(event) {
     if (event.keyCode === 13) {
@@ -45,51 +41,30 @@ $(document).ready(function() {
       var url;
 
       for (k in chats) {
-
-        var name = chats[k].name;
-        var text = chats[k].text;
-
-        var usernameToClasses = name
+        var usernameToClasses = chats[k].name
           .split(/[\s,]+/)
           .map(function(x) {
             return x.replace(/\W/g, "");
           })
           .join(" ");
 
-        var messageToClasses = text
+        var messageToClasses = chats[k].text
           .split(/[\s,]+/)
           .map(function(x) {
             return x.replace(/\W/g, "");
           })
           .join(" ");
 
-      
+       
 
         $("#chattext").append(`
         <div class="messagecontainer ${chats[k].classes}">
-          <div class="messagename ${usernameToClasses}">${name}</div>
-          <div class="messagetext ${messageToClasses}"> ${marked(text)} </div>
+          <div class="messagename ${usernameToClasses}">${chats[k].name}</div>
+          <div class="messagetext ${messageToClasses}"> ${marked(chats[k].text)} </div>
         </div>`);
 
-        var urlregex = new RegExp(/(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/gi);
-        if(text.match(urlregex)) {
-          url = text;
-        } 
-
       }
-
-      // url is the lastmost url.
-      if (url !== currentiframeurl) {
-        $("#backgroundiframe").attr("src", url);
-        currentiframeurl = url;
-      }
-
 
       $("#chattext").scrollTop($("#chattext")[0].scrollHeight);
     });
-
-
-
-
-
 });

@@ -1,53 +1,38 @@
 body {
-  background-color: white;
+  background-color: #333;
+  color: #FFF;
   font: 15px Arial, sans-serif;
 }
 
-.container, #metachat {
-  position: absolute;
-top: 0px;
-bottom: 0px;
-left: 0px;
-right: 0px;
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 80vw;
+  margin: auto;
 }
 
 #metachatcontainer {
-  background-color: white;
-  opacity: 0.9;
-  position: absolute;
-  z-index: 1000;
+  position: fixed;
   top: 20px;
   left: 20px;
-  height: 500px;
+  height: 80vh;
   width: 500px;
   display: flex;
   flex-direction: column;
-  box-shadow: 0px 0px 15px black;
+     box-shadow: 0px 0px 15px black;
 }
 
-
-#metachatcontainer.ui-draggable {
-  cursor: grab;
-}
-#metachatcontainer.ui-draggable-dragging {
-  cursor: grabbing;
-}
-
-#navbar {
-  height: 30px;
-}
- 
 #chattext {
   overflow: auto;
   color: black;
   background: #BBB;
-  height: calc(100% - 80px);
+  height: calc(100% - 50px);
 }
 
 #inputcontainer {
   padding: 10px;
   width: 100%;
-  height: 30px;
+  height: 40px;
   font-size: 0.8em;
 }
 
@@ -62,10 +47,6 @@ input {
 }
 
 #textInput {
-}
-
-#iframecontainer {
-  position:absolute; left: 0; right: 0; bottom: 0; top: 0px; 
 }
 
 .messagecontainer {
