@@ -1,6 +1,6 @@
 var initialized = false;
 
-function button_callback() {
+function rawInitFaceDetection(callback) {
 	/*
 		(0) check whether we're already running face detection
 	*/
@@ -11,7 +11,7 @@ function button_callback() {
 	*/
 	var update_memory = pico.instantiate_detection_memory(5); // we will use the detecions of the last 5 frames
 	var facefinder_classify_region = function(r, c, s, pixels, ldim) {return -1.0;};
-	var cascadeurl = 'https://raw.githubusercontent.com/nenadmarkus/pico/c2e81f9d23cc11d1a612fd21e4f9de0921a5d0d9/rnt/cascades/facefinder';
+	var cascadeurl = 'facefinder';
 	fetch(cascadeurl).then(function(response) {
 		response.arrayBuffer().then(function(buffer) {
 			var bytes = new Int8Array(buffer);
@@ -66,6 +66,14 @@ function button_callback() {
 			{
 				ctx.beginPath();
 				ctx.arc(dets[i][1], dets[i][0], dets[i][2]/2, 0, 2*Math.PI, false);
+        callback({
+          rawx: dets[i][1],
+          rawy: dets[i][0],
+          rawsize: dets[i][2],
+          x: dets[i][1] / 640,
+          y: dets[i][0] / 480,
+          size: dets[i][2]  / 480,
+        });
 				ctx.lineWidth = 3;
 				ctx.strokeStyle = 'red';
 				ctx.stroke();
@@ -81,4 +89,19 @@ function button_callback() {
 	initialized = true;
 
 }
-setTimeout(button_callback,1000);
+
+
+function initFaceDetection(opts) {
+  var callback = opts.callback;
+  var interval = opts.interval;
+  var timer;
+  rawInitFaceDetection(function(data) {
+    // this function acts really fast
+    if(!timer) {
+      timer = setTimeout(function loop() { 
+        callback(data); 
+        timer = null;
+      }, interval)
+    }
+  });
+}

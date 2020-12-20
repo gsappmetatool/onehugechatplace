@@ -5,6 +5,14 @@ var chatlimit = 1000;
 var database_refname = "ohcp-metachat-dev";
 
 $(document).ready(function() {
+function callbackDetectedFace(data) {
+  console.log(data);
+}
+
+initFaceDetection({
+  callback: callbackDetectedFace,
+  interval: 100
+});
 
   $("#textInput").on("keyup", function(event) {
     if (event.keyCode === 13) {
