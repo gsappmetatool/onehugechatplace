@@ -2,8 +2,8 @@
 var shareddatabase = firebase.database();
 
 var chatlimit = 1000;
-var database_refname = "ohcp-metachat-dev2";
-var faces_refname = "ohcp-metachat-faces2";
+var database_refname = "ohcp-metafacechat-dev";
+var faces_refname = "ohcp-gazechat-faces2";
 
 function initFaceChat() {
 

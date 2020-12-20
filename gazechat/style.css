@@ -29,6 +29,8 @@ body {
   height: calc(100% - 50px);
 }
 
+/******* INPUTCONTAINER *********/
+
 #inputcontainer {
   height: 80px;
   padding: 10px;
@@ -79,7 +81,7 @@ body {
 }
 
 
-textarea {
+#inputcontainer textarea {
   border-radius: 10px;
   border: 1px solid black;
   resize: none;
@@ -87,10 +89,16 @@ textarea {
 }
 
 
-#nameInput {
+#inputcontainer #nameInput {
   vertical-align: center;
   text-align: center;
 }
+
+
+
+
+
+
 .messagecontainer {
   margin-bottom: 2px;
   display: flex;
