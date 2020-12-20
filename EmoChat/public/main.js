@@ -2,13 +2,17 @@
 
 // Get a reference to the database service
 var shareddatabase = firebase.database();
-var emo = {r:120, g:120, b:120}
-shareddatabase.ref("rm-test-emotion").set(emo);
+var emo = {gradient: 40}
+//emo.gradient2 = 50;
+
+shareddatabase.ref("rm-gradient-emotion").set(emo);
 window.emotion = {};
 
+var allfeelings = [];
+
 $(function() {
-  
-  
+
+
   var FADE_TIME = 150; // ms
   var TYPING_TIMER_LENGTH = 400; // ms
   var COLORS = [
@@ -25,7 +29,7 @@ $(function() {
     "#a700ff",
     "#d300e7"
   ];
-  
+
 
   // Initialize variables
   var $window = $(window);
@@ -44,8 +48,8 @@ $(function() {
   var typing = false;
   var lastTypingTime;
   var $currentInput = $usernameInput.focus();
-  
-  
+
+
 
   var socket = io();
 
@@ -88,13 +92,13 @@ $(function() {
       });
       // tell server to execute 'new message' and send along one parameter
       socket.emit("new message", message);
-    
+
     onMyNewMessage(message, sendMessage)
 
     }
   }
-  
-  
+
+
 
   // Log a message ******
   function log(message, options) {
@@ -103,11 +107,11 @@ $(function() {
       .text(message);
     addMessageElement($el, options);
   };
-  
-    
+
+
   // Adds the visual chat message to the message list
   function addChatMessage(data, options) {
-    
+
     // Don't fade the message in if there is an 'X was typing'
     var typingMessages = getTypingMessages(data);
     options = options || {};
@@ -116,7 +120,7 @@ $(function() {
       typingMessages.remove();
     }
     var d = new Date().toLocaleTimeString("en-US", { hour12: false });
-    
+
     var usernameToClass = data.username.split(/[\s,]+/).map(function(x) { return x.replace(/\W/g, ''); }).join(" ");
 
 
@@ -127,21 +131,21 @@ $(function() {
     // each message is split up and turned into classes
     var classes = data.message.split(/[\s,]+/).map(function(x) { return x.replace(/\W/g, ''); });
     var classList = classes.join(" ");
-    
+
     var messageBodyDiv = $('<div class="messageBody ' + usernameToClass + ' ' + classList + '">').text(data.message);
-    
+
     var typingClass = data.typing ? "typing" : "";
     var messageDiv = $('<li class="message"/>')
       .data("username", data.username)
       .addClass(typingClass)
       .append(usernameDiv, messageBodyDiv);
     addMessageElement(messageDiv, options);
-    
-    
-    
+
+
+
   }
-  
-  
+
+
 
 
   // this is a function! A function is a piece of code that does something.
@@ -150,34 +154,100 @@ $(function() {
     // DAN's note: if you want to run a command when someone you write a message, put it here!
 
 
-    
-    
-    
-    
-    // CHANGING FIREBASE DATA 
-      
-    if (message.includes("happy")) {  
-      
-      
-      var thisemotion = {r: window.emotion.r + 30, g: window.emotion.g + 30, b: window.emotion.b + 30};
+
+
+    var emotions = {
+      "happy": 5,
+      "sad": -5,
+      "neutral": 0,
+      "god": 5,
+    }
+
+
+
+    var total_change = 0;
+
+
+    for(var k in emotions) {
+      if(message.includes(k)) {
+        total_change += emotions[k];
+      }
+    }
+
+    console.log("total change=" , total_change)
+
+
+
+
+    // CHANGING FIREBASE DATA
+
+    if (message.includes("happy")) {
+
+     // var thisemotion = {happy: window.emotion.happy + 1 };
+
+
+      var thisemotion = {gradient: window.emotion.gradient - 5};
+
 
       //var thisemotion = { name: "happy", intensity: 0.8, r: 220, g:220, b:220 };
-      
+
       console.log(thisemotion)
-      
-        shareddatabase.ref("rm-test-emotion").set(thisemotion);
+
+        shareddatabase.ref("rm-gradient-emotion").set(thisemotion);
 
     }
-    
-    if (message.includes("sad")) {  
-      
-      var thisemotion = {r: window.emotion.r - 30, g: window.emotion.g - 30, b: window.emotion.b - 30};
+    if (message.includes("great")) {
+      var thisemotion = {gradient: window.emotion.gradient - 5};
+      shareddatabase.ref("rm-gradient-emotion").set(thisemotion);
+    }
+    if (message.includes("nice")) {
+      var thisemotion = {gradient: window.emotion.gradient - 5};
+      shareddatabase.ref("rm-gradient-emotion").set(thisemotion);
+    }
+    if (message.includes("brillant")) {
+      var thisemotion = {gradient: window.emotion.gradient - 5};
+      shareddatabase.ref("rm-gradient-emotion").set(thisemotion);
+    }
+    if (message.includes("cool")) {
+      var thisemotion = {gradient: window.emotion.gradient - 5};
+      shareddatabase.ref("rm-gradient-emotion").set(thisemotion);
+    }
+    if (message.includes("vaccine")) {
+      var thisemotion = {gradient: window.emotion.gradient - 5};
+      shareddatabase.ref("rm-gradient-emotion").set(thisemotion);
+    }
+
+    if (message.includes("bad")) {
+      var thisemotion = {gradient: window.emotion.gradient + 5};
+      shareddatabase.ref("rm-gradient-emotion").set(thisemotion);
+    }
+     if (message.includes("depress")) {
+      var thisemotion = {gradient: window.emotion.gradient + 5};
+      shareddatabase.ref("rm-gradient-emotion").set(thisemotion);
+    }
+     if (message.includes("god")) {
+      var thisemotion = {gradient: window.emotion.gradient + 5};
+      shareddatabase.ref("rm-gradient-emotion").set(thisemotion);
+    }
+    if (message.includes("un")) {
+      var thisemotion = {gradient: window.emotion.gradient + 5};
+      shareddatabase.ref("rm-gradient-emotion").set(thisemotion);
+    }
+    if (message.includes("covid")) {
+      var thisemotion = {gradient: window.emotion.gradient + 5};
+      shareddatabase.ref("rm-gradient-emotion").set(thisemotion);
+    }
+
+    if (message.includes("sad")) {
+
+      var thisemotion = {gradient: window.emotion.gradient + 5};
+
 
       //var thisemotion = { name: "happy", intensity: 0.8, r: 220, g:220, b:220 };
-      
+
       console.log(thisemotion)
-      
-        shareddatabase.ref("rm-test-emotion").set(thisemotion);
+
+        shareddatabase.ref("rm-gradient-emotion").set(thisemotion);
 
        // var emotion = { name: "sad", intensity: 0.3 };
 
@@ -187,17 +257,17 @@ $(function() {
 
     /*
     // IF the message includes "make it blue"..
-    if (message.includes("makeitblue")) {  
+    if (message.includes("makeitblue")) {
 
       // get an element that has the id 'messages'
       // and then, edit the CSS to make the background color blue
       $("#messages").css('background-color', 'rgb(0,00,100)')
 
     }
-    
+
 
     // IF the message includes "make it blue"..
-    if (message.includes("makeitgreen")) {  
+    if (message.includes("makeitgreen")) {
 
       // get an element that has the id 'messages'
       // and then, edit the CSS to make the background color blue
@@ -212,24 +282,24 @@ $(function() {
       // and then, edit the CSS to make the text bigger
       $("#messages").css('font-size', '300%')
     }
-    
-    
+
+
     // IF the message includes “make it bigger”..
     if (message.includes("makeitsmaller")) {
       // get an element that has the id ‘messages’
       // and then, edit the CSS to make the text bigger
       $("#messages").css('font-size', '50%')
     }
-    
-    
+
+
     // IF the message includes “make it bigger”..
     if (message.includes("makeitnormal")) {
       // get an element that has the id ‘messages’
       // and then, edit the CSS to make the text bigger
       $("#messages").css('font-size', '100%')
     }
-    
-    if (message.includes("STOP")) {  
+
+    if (message.includes("STOP")) {
       $("#messages").css('background-color', 'rgb(255,0,0)')
     }  */
 
@@ -245,22 +315,22 @@ $(function() {
     // DAN's note: if you want to run a command when someone else writes a message, put it here!
 
 
-    if (message.includes("how are you")) {  
+    if (message.includes("how are you")) {
       sendMessage("I'm fine, and you?");
     }
 
-      if (message.includes("what's going on")) {  
+      if (message.includes("what's going on")) {
       sendMessage("nothing");
     }
 
 
-    
-    if (message.includes("do you agree?")) {  
+
+    if (message.includes("do you agree?")) {
       sendMessage("Yeah, I agree with you");
     }
-    
+
     // IF the message includes "make it blue"..
-    if (message.includes("makeitblue")) {  
+    if (message.includes("makeitblue")) {
 
       // get an element that has the id 'messages'
       // and then, edit the CSS to make the background color blue
@@ -268,10 +338,10 @@ $(function() {
 
     }
 
-    
-    
+
+
     // IF the message includes "make it blue"..
-    if (message.includes("makeitgreen")) {  
+    if (message.includes("makeitgreen")) {
 
       // get an element that has the id 'messages'
       // and then, edit the CSS to make the background color green
@@ -279,37 +349,37 @@ $(function() {
 
     }
 
-    
-    
-    if (message.includes("STOP")) {  
+
+
+    if (message.includes("STOP")) {
       $("#messages").css('background-color', 'rgb(255,0,0)')
     }
 
 
-    
-    if (message.includes("stopin5")) {  
 
-      setTimeout( function() { 
+    if (message.includes("stopin5")) {
+
+      setTimeout( function() {
           sendMessage("STOP");
       }, 5000);  //setTimeout executes what's inside of it after some time. Guess what 3000 means?
 
     }
 
-    
-    if (message.includes("GO")) {  
+
+    if (message.includes("GO")) {
       window.timeoutHandle = window.setTimeout(function() {
           clearTimeout(window.timeoutHandle);
           sendMessage("finally! nobody said Go in the last 5 seconds")
-      
+
       }, 5000);
     }
-    
 
-    
-    
-    if (message.includes("marco")) {  
 
-      setTimeout( function() { 
+
+
+    if (message.includes("marco")) {
+
+      setTimeout( function() {
           sendMessage("polo");
       }, 3000);  //setTimeout executes what's inside of it after some time. Guess what 3000 means?
 
@@ -324,8 +394,8 @@ $(function() {
 
     }
 
-    
-    
+
+
     if (message.includes("hey")) {
 
       var r = Math.random();
@@ -338,14 +408,14 @@ $(function() {
       }
 
     }
-    
-    
-    
+
+
+
   }
 
 
-  
-  
+
+
   // Adds the visual chat typing message
   function addChatTyping(data) {
     data.typing = true;
@@ -360,7 +430,7 @@ $(function() {
     });
   }
 
-  
+
   function addMessageElement(el, options) {
     var $el = $(el);
 
@@ -413,8 +483,8 @@ $(function() {
       }, TYPING_TIMER_LENGTH);
     }
   }
-  
-  
+
+
 
   // Gets the 'X is typing' messages of a user
   function getTypingMessages(data) {
@@ -423,8 +493,8 @@ $(function() {
     });
   }
 
-  
-  
+
+
   // Gets the color of a username through our hash function
   function getUsernameColor(username) {
     // Compute hash code
@@ -437,9 +507,9 @@ $(function() {
     return COLORS[index];
   }
 
-  
-  
-  
+
+
+
   // Keyboard events
 
   $window.keydown(event => {
@@ -465,9 +535,9 @@ $(function() {
     updateTyping();
   });
 
-  
-  
-  
+
+
+
   // Click events
 
   // Focus input when clicking anywhere on login page
@@ -480,12 +550,12 @@ $(function() {
     $inputMessage.focus();
   });
 
-  
-  
-  
+
+
+
   // Socket events
   // Socket is a networking communication protocol, so this part receives data back and forth from the server.
-  
+
 
   // Whenever the server emits 'login', log the login message
   socket.on("login", data => {
@@ -498,18 +568,18 @@ $(function() {
     addParticipantsMessage(data);
   });
 
-  
+
   // Whenever the server emits 'new message', update the chat body
-  
+
   socket.on("new message", data => {
-    addChatMessage(data);  
+    addChatMessage(data);
     console.log(data);
     onSomeonesNewMessage(data.message)
 
   });
 
-  
-  
+
+
   // Whenever the server emits 'user joined', log it in the chat body
   socket.on("user joined", data => {
     log(data.username + " joined");
@@ -547,28 +617,29 @@ $(function() {
   socket.on("reconnect_error", () => {
     log("attempt to reconnect has failed");
   });
-  
-  
-  
-  
-  
-  
-  
-    // when the database changes, change the website  
-  shareddatabase.ref("rm-test-emotion").on("value", function(snapshot) {
-    
+
+
+
+
+
+
+
+    // when the database changes, change the website
+  shareddatabase.ref("rm-gradient-emotion").on("value", function(snapshot) {
+
     emotion = snapshot.val();
-   
-    
+
+
     console.log(emotion);
-    
+
     $("#emotion_log").empty();
-    $("#emotion_log").append("<div>" + emotion.r + "</div>")
-    
-  $("body").css("background-color", "rgb(" + emotion.r + "," + emotion.g + "," + emotion.b + ")") 
+    $("#emotion_log").append("<div>" + emotion.gradient + emotion.happy + "</div>")
+    $("body").css("background", "linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,22,121,1) "+ emotion.gradient +"%, rgba(0,212,255,1) 100%)")
+
+  $("body").css("background-color", "rgb(" + emotion.r + "," + emotion.g + "," + emotion.b + ")")
                     //$("body").css("font-size", cp[0] * 2  + "em")//
   });
-  
-  
-  
+
+
+
 });

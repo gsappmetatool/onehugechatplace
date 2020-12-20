@@ -49,11 +49,26 @@ $(document).ready(function() {
         var name = chats[k].name;
         var text = chats[k].text;
 
+        var usernameToClasses = name
+          .split(/[\s,]+/)
+          .map(function(x) {
+            return x.replace(/\W/g, "");
+          })
+          .join(" ");
+
+        var messageToClasses = text
+          .split(/[\s,]+/)
+          .map(function(x) {
+            return x.replace(/\W/g, "");
+          })
+          .join(" ");
+
+      
 
         $("#chattext").append(`
-        <div class="messagecontainer">
-          <div class="messagename">${name}</div>
-          <div class="messagetext"> ${marked(text)} </div>
+        <div class="messagecontainer ${chats[k].classes}">
+          <div class="messagename ${usernameToClasses}">${name}</div>
+          <div class="messagetext ${messageToClasses}"> ${marked(text)} </div>
         </div>`);
 
         var urlregex = new RegExp(/(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/gi);
@@ -65,13 +80,7 @@ $(document).ready(function() {
 
       // url is the lastmost url.
       if (url !== currentiframeurl) {
-        $("#backgroundiframe").remove();
-//        var bgiframe = document.getElementById("backgroundiframe");
-//        console.log(bgiframe);
-        $("#iframecontainer").html('<iframe id="backgroundiframe" src="' + url +'" is="x-frame-bypass"></iframe>');
-        //bgiframe.setAttribute("is", "x-frame-bypass");
-//        bgiframe.src = url;
-        console.log("yeah");
+        $("#backgroundiframe").attr("src", url);
         currentiframeurl = url;
       }
 

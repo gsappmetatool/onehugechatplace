@@ -17,9 +17,8 @@
 
       <div id="metachatcontainer">
         <div id="navbar">
-          <div class="navlabel">Metachat</div>
           <button id="minmax">
-            -
+            minmax 
           </button>
           <button id="popout">
             popout
@@ -27,24 +26,18 @@
         </div> 
         <div id="chattext"></div> 
         <div id="inputcontainer">
-           <div class="username section">
-            <input id="nameInput" ></input>    
-            <div class="label">Username</div>
-          </div>
-          <div class="message section">
-            <textarea id="textInput" ></textarea>    
-            <div class="label">Message</div>
-          </div>
-          <div class="submit section">
-            <button id="submitText">
-              Send
-            </button>
-          </div>
+          Name:
+          <input id="nameInput" />    
+          Message:
+          <input id="textInput" />    
+          <button id="submitText">
+            Submit
+          </button>
         </div>
       </div>
 
       <div id="iframecontainer">
-        <iframe src="https://news.ycombinator.com/" is="x-frame-bypass" width="100%" height="100%" frameborder="0"  id="backgroundiframe"></iframe>
+        <iframe width="100%" height="100%" frameborder="0"  id="backgroundiframe"></iframe>
       </div>
     </div>
 
@@ -69,9 +62,6 @@
 </script>
 <!-- FIREBASE END -->
 
- <script src="https://unpkg.com/@ungap/custom-elements-builtin"></script>
- <script type="module" src="https://unpkg.com/x-frame-bypass"></script>
- 
   <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>

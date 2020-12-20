@@ -48,7 +48,6 @@ function initui() {
       $( "#metachatcontainer" ).resizable( "disable" );
       $( "#metachatcontainer" ).addClass("minimized");
       chatcollapsed = true;
-      $("#minmax").text("+");
     }
   }
 
@@ -62,7 +61,6 @@ function initui() {
       $( "#metachatcontainer" ).resizable( "enable" );
       $( "#metachatcontainer" ).removeClass("minimized");
       chatcollapsed = false;
-      $("#minmax").text("-");
     }
   }
 
