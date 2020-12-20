@@ -84,7 +84,8 @@ $(document).ready(function() {
 //        $(".messagecontainer." + faces[k].name).css("font-size", fontsize + "em");
         var otherrules = "";
         if(faces[k].size == 0) {
-          otherrules = "opacity: 0.5;";
+          fontsize = 0.8;
+          otherrules = "opacity: 0.3;";
         }
 
 
