@@ -67,9 +67,10 @@ function rawInitFaceDetection(callback) {
 				ctx.beginPath();
 				ctx.arc(dets[i][1], dets[i][0], dets[i][2]/2, 0, 2*Math.PI, false);
         callback({
-          rawx: dets[i][1],
-          rawy: dets[i][0],
-          rawsize: dets[i][2],
+          detected: true,
+//          rawx: dets[i][1],
+//          rawy: dets[i][0],
+//          rawsize: dets[i][2],
           x: dets[i][1] / 640,
           y: dets[i][0] / 480,
           size: dets[i][2]  / 480,
@@ -91,7 +92,7 @@ function rawInitFaceDetection(callback) {
 }
 
 
-function initFaceDetection(opts) {
+function initFaceDetection_onlyOnData(opts) {
   var callback = opts.callback;
   var interval = opts.interval;
   var timer;
@@ -104,4 +105,28 @@ function initFaceDetection(opts) {
       }, interval)
     }
   });
+}
+
+function initFaceDetection(opts) {
+  var callback = opts.callback;
+  var interval = opts.interval;
+  var thisdata; 
+  var thistimestamp = Date.now();
+  var lasttimestamp = Date.now();
+  rawInitFaceDetection(function(data) {
+    // this function acts really fast
+    thisdata = data;
+    thistimestamp = Date.now();
+  });
+
+  setInterval(function() {
+    if(thistimestamp != lasttimestamp) {
+      // we see a face!
+      lasttimestamp = thistimestamp;
+      callback(thisdata);
+    } else {
+      // face is not seen
+      callback({ detected: false })
+    }
+  }, 500);
 }

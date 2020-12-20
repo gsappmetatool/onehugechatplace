@@ -53,6 +53,8 @@ input {
   margin-bottom: 2px;
   display: flex;
   flex-direction: row;
+  transition: font-size .75s ease-in-out;
+  height: 20px;
 }
 
 .messagename {
@@ -75,7 +77,6 @@ input {
 }
 
 .messagetext {
-  flex: 0 0 calc(50% - 100px);
 }
 
 .messagetext p {
