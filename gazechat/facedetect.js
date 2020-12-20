@@ -75,8 +75,8 @@ function rawInitFaceDetection(callback) {
           y: dets[i][0] / 480,
           size: dets[i][2]  / 480,
         });
-				ctx.lineWidth = 5;
-				ctx.strokeStyle = '#44F';
+				ctx.lineWidth = 3;
+				ctx.strokeStyle = 'red';
 				ctx.stroke();
 			}
 	}
