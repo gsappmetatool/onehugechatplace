@@ -76,7 +76,6 @@ elephant {
 #overlay1 {
 }
 
-
 #overlay2 {
   background-color: 6a00ff;
 }
@@ -85,10 +84,12 @@ elephant {
   height: 100vh;
   position: fixed;
 }
+
 .bubble {
   padding: 25px;
   margin: 0px;
 }
+
 .btn {
   font-size: 12;
   text-align: center;
@@ -101,6 +102,7 @@ elephant {
   font-family: "Helvetica";
   position: absolute;
 }
+
 .btn2 {
    font-size: 12;
   text-align: center;
@@ -112,12 +114,14 @@ elephant {
   margin: 10px;
   font-family: "Helvetica";
 }
+
 .pages {
   height: 100%;
   margin: 0;
   padding: 0;
   width: 100%;
 }
+
 .main.page {
     height: 100%;
   padding-bottom: 0px;
