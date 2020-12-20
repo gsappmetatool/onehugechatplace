@@ -2,8 +2,10 @@
 var shareddatabase = firebase.database();
 
 var chatlimit = 1000;
-var database_refname = "ohcp-metachat-dev2";
-var faces_refname = "ohcp-metachat-faces2";
+var database_refname = "ohcp-metafacechat-prod";
+var faces_refname = "ohcp-gazechat-faces2";
+var chatmode_refname = "ohcp-gazechat-chatmode";
+var chatmode;
 
 function initFaceChat() {
 
@@ -16,8 +18,8 @@ function initFaceChat() {
       name: myname,
       lastUpdated: Date.now(),
       size: data.size || 0,
-      x: data.x || 0,
-      x: data.y || 0
+      x: data.x || -100,
+      y: data.y || -100
     };
 
     shareddatabase.ref(faces_refname + "/" + data.name).set(data);
@@ -70,6 +72,28 @@ $(document).ready(function() {
 
   initFaceChat();
 
+  $("#facecanvas").click(function() {
+    var thischatmode;
+    if(chatmode !== "spatial") {
+      thischatmode = "spatial";
+    } else {
+      thischatmode = "normal";
+    }
+    shareddatabase.ref(chatmode_refname).set({ name: thischatmode })
+  });
+
+    shareddatabase.ref(chatmode_refname)
+    .on("value", function(snapshot) {
+      var thischatmode = snapshot.val().name;
+      console.log("oh!", thischatmode)
+      chatmode = thischatmode;
+      if(chatmode == "spatial") {
+        $("body").addClass("spatial");
+      } else {
+        $("body").removeClass("spatial");
+      }
+    });
+
 // when the database changes, change the website
   shareddatabase
     .ref(faces_refname)
@@ -84,9 +108,14 @@ $(document).ready(function() {
 //        $(".messagecontainer." + faces[k].name).css("font-size", fontsize + "em");
         var otherrules = "";
         if(faces[k].size == 0) {
-          otherrules = "opacity: 0.5;";
+          fontsize = 0.8;
+          otherrules = "opacity: 0.3;";
         }
 
+        if(chatmode == "spatial") {
+          otherrules += `top: ${faces[k].y * 100}vh;`;
+          otherrules += `left: ${faces[k].x* 100}vw;`;
+        }
 
         $("#dynamicsheet").append(`
         .mc-${faces[k].name} {
@@ -134,8 +163,13 @@ $(document).ready(function() {
       $("#chattext").empty();
 
       var url;
+      var counter = 0;
+      var chatlen = Object.keys(chats).length;
+
+      var lastchats = {};
 
       for (k in chats) {
+        counter += 1;
         var usernameToClasses = chats[k].name
           .split(/[\s,]+/)
           .map(function(x) {
@@ -150,14 +184,31 @@ $(document).ready(function() {
           })
           .join(" ");
 
-       
+        if(chatmode != "spatial") {
+        
+          $("#chattext").append(`
+          <div class="messagecontainer mc-${usernameToClasses}">
+            <div class="messagename ${usernameToClasses}">${chats[k].name}</div>
+            <div class="messagetext ${messageToClasses}"> ${marked(chats[k].text)} </div>
+          </div>`);
+        } else {
+          console.log(k,chats[k])
+          lastchats[chats[k].name] = chats[k]
+        }
 
-        $("#chattext").append(`
-        <div class="messagecontainer mc-${usernameToClasses}">
-          <div class="messagename ${usernameToClasses}">${chats[k].name}</div>
-          <div class="messagetext ${messageToClasses}"> ${marked(chats[k].text)} </div>
-        </div>`);
+      }
 
+      if(chatmode == "spatial") {
+
+        console.log(lastchats);
+        for (n in lastchats) {
+
+          $("#chattext").append(`
+          <div class="messagecontainer mc-${n}">
+            <div class="messagename">${n}</div>
+            <div class="messagetext"> ${marked(lastchats[n].text)} </div>
+          </div>`);
+        }
       }
 
       $("#chattext").scrollTop($("#chattext")[0].scrollHeight);

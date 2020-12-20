@@ -17,18 +17,23 @@
       <div id="metachatcontainer">
         <div id="chattext"></div> 
         <div id="inputcontainer">
-          Username:
-          <input id="nameInput" />    
-          Message:
-          <input id="textInput" />    
-          <button id="submitText">
-            Submit
-          </button>
+          <div class="username section">
+            <input id="nameInput" ></input>    
+            <div class="label">Username</div>
+          </div>
+          <div class="message section">
+            <textarea id="textInput" ></textarea>    
+            <div class="label">Message</div>
+          </div>
+          <div class="submit section">
+            <button id="submitText">
+              Send
+            </button>
+          </div>
         </div>
       </div>
 
-      <div id="iframecontainer"></div>
-      		<canvas width="640" height="480"></canvas>
+      <canvas id="facecanvas" width="640" height="480"></canvas>
     </div>
 
 
