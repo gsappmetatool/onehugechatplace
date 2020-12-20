@@ -41,7 +41,7 @@ class Bubble {
   }
   
   move() {
-  	this.x += random(-5,1);
+  	this.x += random(-1,1);
   	this.y += random(-5,1);
     
     if (this.y < 0){
@@ -70,15 +70,16 @@ class Bubble {
   }
   
   clicked() {
-    $("#myDIV").fadeIn(3000).fadeOut(3000);
+    
     var d = dist(mouseX, mouseY, this.x, this.y);
     if(d < this.size){
        backc = color(this.r, this.g, this.b)
       var rgb = { r: this.r, g: this.g, b: this.b };
       document.getElementById("myDIV").style.backgroundColor="rgb(" + this.r + "," + this.g + "," + this.b + ")";
       //$("body").css("background-color", "rgb(" + this.r + "," + this.g + "," + this.b + ")")
-      
-        shareddatabase.ref("rm-bubble-emotion").set(rgb);
+      $("#myDIV").fadeIn(3000).fadeOut(3000);
+    console.log("fade in");
+        shareddatabase.ref("rm-bubbleG-emotion").set(rgb);
     }
   }
 }
